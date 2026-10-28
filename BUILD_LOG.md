@@ -6,7 +6,7 @@ Repo: Thow76/lits-homework · Pages: https://thow76.github.io/lits-homework/ · 
 
 | Stage | Status | Notes |
 |-------|--------|-------|
-| 1. Scaffold and first deploy | **Done** (code) / Pages **unverified** | Pushed to `main`. The automated task's network policy blocks `thow76.github.io`, so the live URL could not be fetched from the build environment. See "Andrew" below. |
+| 1. Scaffold and first deploy | **Done** (code) / Pages **not enabled yet** | Pushed to `main`. No "pages build and deployment" workflow run appeared in the 80 s after the push, which means GitHub Pages is not switched on for the repo. Also, the task's network policy blocks `thow76.github.io`, so the live URL cannot be fetched from the build environment even once Pages is on. See "Andrew" below. |
 | 2. Engine | **Done** | Scoring, lives, Show answer, best scores, home, finished, Start again, date locking, three counter events. Tested headless at 390px (52 checks pass). |
 | 3. Activity types | **Done** | All 13 types, `js/icons.js`, `units/README.md`, dummy unit covering every type. Tested headless. |
 | 4. End-to-end on the live Pages URL | **Not started** | Needs Pages enabled and the host reachable. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same 52 checks against the live site. |
@@ -41,7 +41,7 @@ Home totals count open sections only; section released yesterday open, released 
 - `?unit=<id>` opens any unit folder for testing (not a release mechanism — dates still apply).
 
 ### Andrew must decide or supply
-1. **GitHub Pages**: enable it if not already on — repo Settings → Pages → Source "Deploy from a branch" → `main` / `/ (root)`. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone.
+1. **GitHub Pages is not enabled** (no deployment run after the push). Enable it: repo Settings → Pages → Source "Deploy from a branch" → `main` / `/ (root)`. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone.
 2. **Network policy for this task**: the environment could not reach `thow76.github.io` (blocked by the session's network settings), so Stage 4 (live end-to-end) cannot run until that host is allowed for the task's environment. Everything else was tested locally.
 3. **GoatCounter site code**: replace `GOATCOUNTER_CODE` in `index.html` (one place).
 4. Real Shopping content: images, MP3s and `unit.json` per `units/README.md`, plus the real `release` dates.
