@@ -1,0 +1,76 @@
+{
+  "id": "dummy",
+  "title": "Test unit (not for learners)",
+  "sections": [
+    {
+      "id": "one",
+      "title": "Every activity type",
+      "activities": [
+        { "type": "match", "items": [
+          { "image": "bread.svg", "options": ["bread", "milk", "shop"], "answer": "bread", "audio": "s1.mp3" },
+          { "image": "shop.svg", "options": ["I go to the shop.", "I go to the bank.", "I go to the park."], "answer": "I go to the shop." }
+        ]},
+        { "type": "which-word", "items": [
+          { "prompt": "I buy ___ at the shop.", "options": ["milk", "bus", "car"], "answer": "milk", "image": "milk.svg" }
+        ]},
+        { "type": "understanding", "story": "Amina goes to the shop. She buys bread and milk. The bread costs one pound.", "items": [
+          { "question": "What does Amina buy?", "options": ["Bread and milk", "Fish and chips", "A bus ticket"], "answer": "Bread and milk" }
+        ]},
+        { "type": "yes-no", "items": [
+          { "statement": "Amina buys bread.", "answer": true },
+          { "statement": "Amina buys fish.", "answer": false }
+        ]},
+        { "type": "word-order", "items": [
+          { "sentence": "I go to the shop.", "audio": "s2.mp3" },
+          { "sentence": "The bread costs one pound today." }
+        ]},
+        { "type": "spell-it", "items": [
+          { "word": "milk", "image": "milk.svg", "audio": "s3.mp3" }
+        ]},
+        { "type": "sort", "categories": ["Person", "Place", "Thing"], "items": [
+          { "word": "shop", "answer": "Place" },
+          { "word": "Amina", "answer": "Person" }
+        ]},
+        { "type": "conversation-order", "items": [
+          { "lines": [
+            { "speaker": "A", "text": "Hello, can I help you?", "audio": "s1.mp3" },
+            { "speaker": "B", "text": "Yes. How much is the bread?", "audio": "s2.mp3" },
+            { "speaker": "A", "text": "It is one pound.", "audio": "s3.mp3" },
+            { "speaker": "B", "text": "Thank you." }
+          ]}
+        ]},
+        { "type": "audio-true-false", "items": [
+          { "audio": "s1.mp3", "text": "The bread costs one pound.", "answer": true }
+        ]},
+        { "type": "listen-choose", "items": [
+          { "audio": "s2.mp3", "answer": "I want two apples.", "distractors": ["I want two oranges.", "I want ten apples."] }
+        ]},
+        { "type": "missing-word", "items": [
+          { "sentence": "I ___ bread every day.", "options": ["buy", "buys", "bought"], "answer": "buy" }
+        ]},
+        { "type": "find-and-fix", "items": [
+          { "sentence": "She buy bread every day.", "wrong": "buy", "options": ["buys", "buying", "bought"], "answer": "buys" }
+        ]},
+        { "type": "capital-letters", "items": [
+          { "sentence": "Amina lives in Aberdeen." }
+        ]}
+      ]
+    },
+    {
+      "id": "two",
+      "title": "Open by date",
+      "release": "2020-01-01",
+      "activities": [
+        { "type": "yes-no", "items": [ { "statement": "The shop is open.", "answer": true } ] }
+      ]
+    },
+    {
+      "id": "three",
+      "title": "Locked by date",
+      "release": "2099-01-01",
+      "activities": [
+        { "type": "yes-no", "items": [ { "statement": "The shop is closed.", "answer": false } ] }
+      ]
+    }
+  ]
+}

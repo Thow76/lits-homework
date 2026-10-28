@@ -1,0 +1,11 @@
+{
+  "id": "shopping",
+  "title": "Shopping",
+  "sections": [
+    { "id": "vocabulary", "title": "Vocabulary and first practice", "release": "2099-01-01", "activities": [] },
+    { "id": "story", "title": "Whole story", "release": "2099-01-08", "activities": [] },
+    { "id": "understanding", "title": "Understanding the story", "release": "2099-01-15", "activities": [] },
+    { "id": "conversation", "title": "Conversation practice", "release": "2099-01-22", "activities": [] },
+    { "id": "personalisation", "title": "Personalisation", "release": "2099-01-29", "activities": [] }
+  ]
+}
