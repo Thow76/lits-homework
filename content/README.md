@@ -1,17 +1,11 @@
-# Content drop folders
+# Content folders
 
-One folder per unit: `content/shopping/`, `content/health/`, and so on. The scheduled task reads what is in here and builds the matching unit under `units/`. Nothing in `content/` is shown to learners.
+The scheduled task copies Andrew's material here from the Google Drive folder **"Lits homework"** (one subfolder per unit, for example "Lits homework/Shopping") and then builds the unit under `units/`. Nothing in `content/` is shown to learners. Andrew does not need to touch this folder: he puts files in Google Drive and the task does the rest.
 
-## Uploading files without any software
-1. Open https://github.com/Thow76/lits-homework/tree/main/content and click into the unit's folder (or click **Add file → Create new file**, type `health/notes.txt` as the name to make a new unit folder).
-2. Click **Add file → Upload files**, drag the files in, type a short note, click **Commit changes**.
+## What Andrew puts in a unit's Drive folder
+- The worksheet (Word, PDF, Google Doc or text) with the story, vocabulary, dialogue and exercises.
+- One picture per vocabulary word, named after the word (bread.jpg).
+- One audio file per word or sentence, named after what it says (I-go-to-the-shop.mp3), or any names plus a text file or Google Doc called "audio" with one line per file: filename = words it says.
+- A text file or Google Doc called "notes": the date each section opens (UK time), any section renames, which games go where, whether this unit is the one learners should see now, and anything else in plain English.
 
-## What goes in a unit folder
-- **The worksheet**: `worksheet.docx`, `.pdf`, `.txt` or `.md`, with the story, vocabulary and dialogue. Several files are fine (`worksheet-week1.docx`, `worksheet-week2.docx`).
-- **notes.txt** (optional): anything the worksheet does not say, in plain English. Which games in which section, section names, words to skip, "this unit is the current one".
-- **Pictures**: one per vocabulary word, named after the word: `bread.jpg`, `milk.png`. Any size.
-- **Audio**: one file per sentence or word, named after what it says (`I-go-to-the-shop.m4a`, `bread.mp3`), or any names plus an `audio.txt` with one line per file: `filename = the words it says`. Any format.
-- **dates.txt**: one line per section, `Section title = YYYY-MM-DD`, the day the section opens for learners (UK time). Until a section has a date it stays locked.
-
-## What the task produces
-`units/<unit>/unit.json` plus shrunken pictures and small MP3s beside it, following `units/README.md`. It never invents story text, sentences or audio, and never generates speech.
+Files the task has processed are listed in `CONTENT_LOG.md` with their Drive modification times, so a changed file is picked up again and an unchanged one is not.
