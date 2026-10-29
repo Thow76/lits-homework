@@ -6,11 +6,11 @@
 
 **What is finished.** The whole homework web page has been written and tested. That means: the home screen with the unit score and progress bar; the five Shopping sections (currently empty placeholders); all thirteen activity types (match, which word, understanding, word order, spell it, person/place/thing, conversation order, audio true/false, listen and choose, missing word, capital letters, yes/no); the scoring with three lives and "Show answer"; sections that lock until their release date; "Start again" with an "Are you sure?" step; Arabic labels under the English words when the phone is set to Arabic; working offline after the first visit; and the "Add to Home Screen" icon. An automatic test drives the page in a pretend phone browser and checks 52 things. All 52 pass.
 
-**What is not finished.** The page is not on the internet yet. All the files are saved in the GitHub repository (the online folder at github.com/Thow76/lits-homework), but GitHub only turns a repository into a public website when you switch on a feature called **GitHub Pages**. It is off by default and only the account owner can switch it on. Until then the address https://thow76.github.io/lits-homework/ shows "404 There isn't a GitHub Pages site here".
+**The page is live.** Andrew switched on GitHub Pages on 2026-10-29 at about 20:00 and opened the page on his phone. Every push to `main` now republishes the site within a minute or two. Address: https://thow76.github.io/lits-homework/ (test unit: add `?unit=dummy`).
 
 **The three things only Andrew can do**
 
-1. **Switch on GitHub Pages (five clicks, two minutes).**
+1. ~~Switch on GitHub Pages~~ **Done 2026-10-29.** (Steps kept for reference.)
    - Go to https://github.com/Thow76/lits-homework and sign in.
    - Click the **Settings** tab (the cog, far right of the row that starts Code · Issues · Pull requests).
    - In the left-hand menu click **Pages**.
@@ -36,7 +36,7 @@ Repo: Thow76/lits-homework · Pages: https://thow76.github.io/lits-homework/ · 
 | 1. Scaffold and first deploy | **Done** (code) / Pages **not enabled yet** | Pushed to `main`. No "pages build and deployment" workflow run appeared in the 80 s after the push, which means GitHub Pages is not switched on for the repo. Also, the task's network policy blocks `thow76.github.io`, so the live URL cannot be fetched from the build environment even once Pages is on. See "Andrew" below. |
 | 2. Engine | **Done** | Scoring, lives, Show answer, best scores, home, finished, Start again, date locking, three counter events. Tested headless at 390px (52 checks pass). |
 | 3. Activity types | **Done** | All 13 types, `js/icons.js`, `units/README.md`, dummy unit covering every type. Tested headless. |
-| 4. End-to-end on the live Pages URL | **Blocked on Andrew** (checked again 2026-10-29) | Pages is still not enabled (the repo has no "pages build and deployment" run) and `thow76.github.io` is still blocked by this task's network policy. Local suite re-run on the same commit: 52/52 pass. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same checks against the live site once both are fixed. |
+| 4. End-to-end on the live Pages URL | **Pages is live (2026-10-29 20:03); automated live check still blocked** | Pages is on and deploying from `main`. `thow76.github.io` is still blocked by this task's network policy, so the live check must be done by Andrew on a phone (list below) unless the domain is allowed. Local suite re-run on the same commit: 52/52 pass. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same checks against the live site once both are fixed. |
 
 ## Run 2 — 2026-10-29
 
@@ -48,7 +48,7 @@ Nothing new to build: Stages 1–3 are complete and Stage 4 needs the live site.
 - Local end-to-end suite (`node test/e2e.mjs`, headless Chromium 390×844) on commit `ca1a96b`: 52 passed, 0 failed. This covers every Stage 4 item that can be tested without the live URL: all activity types, Show answer, Start again, best score across a reload, locked/open by date, Arabic labels with browser language `ar`, offline reload after first load, manifest validity, console errors.
 
 ### Still needed from Andrew before Stage 4 can finish
-1. Enable GitHub Pages: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main`, folder `/ (root)` → Save**. The site appears at https://thow76.github.io/lits-homework/ a minute or two later. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone to see the test unit.
+1. ~~Enable GitHub Pages~~ — done by Andrew 2026-10-29 20:03.
 2. Allow `thow76.github.io` in this task's environment network settings (Claude Code → the environment this task runs in → network policy / allowed domains). Without it the live check can only be done by Andrew on a phone.
 3. ~~GoatCounter site code~~ — done 2026-10-29.
 
@@ -84,7 +84,7 @@ Home totals count open sections only; section released yesterday open, released 
 - `?unit=<id>` opens any unit folder for testing (not a release mechanism — dates still apply).
 
 ### Andrew must decide or supply
-1. **GitHub Pages is not enabled** (no deployment run after the push). Enable it: repo Settings → Pages → Source "Deploy from a branch" → `main` / `/ (root)`. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone.
+1. ~~GitHub Pages is not enabled~~ — enabled by Andrew 2026-10-29.
 2. **Network policy for this task**: the environment could not reach `thow76.github.io` (blocked by the session's network settings), so Stage 4 (live end-to-end) cannot run until that host is allowed for the task's environment. Everything else was tested locally.
 3. ~~GoatCounter site code~~ — done 2026-10-29 (`lits-homework-counter`).
 4. Real Shopping content: images, MP3s and `unit.json` per `units/README.md`, plus the real `release` dates. Andrew plans to rename the sections later: when renaming, keep each section's `id` unchanged and change only `title`, so learners' saved best scores (keyed by id) are kept.
