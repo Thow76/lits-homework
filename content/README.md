@@ -1,11 +1,12 @@
 # Content folders
 
-The scheduled task copies Andrew's material here from the Google Drive folder **"Lits homework"** (one subfolder per unit, for example "Lits homework/Shopping") and then builds the unit under `units/`. Nothing in `content/` is shown to learners. Andrew does not need to touch this folder: he puts files in Google Drive and the task does the rest.
+One folder per unit (`content/shopping/`, `content/health/`...). Andrew fills a folder by running the "Add unit material" scheduled task and attaching files in that chat; the task saves them here and pushes. The daily "Build units" task then builds `units/<unit>/` from it. Nothing in `content/` is shown to learners.
 
-## What Andrew puts in a unit's Drive folder
-- The worksheet (Word, PDF, Google Doc or text) with the story, vocabulary, dialogue and exercises.
-- One picture per vocabulary word, named after the word (bread.jpg).
-- One audio file per word or sentence, named after what it says (I-go-to-the-shop.mp3), or any names plus a text file or Google Doc called "audio" with one line per file: filename = words it says.
-- A text file or Google Doc called "notes": the date each section opens (UK time), any section renames, which games go where, whether this unit is the one learners should see now, and anything else in plain English.
+## What a unit folder holds
+- The worksheet as attached (Word, PDF or text), if any.
+- Pictures named after the word: `bread.jpg`.
+- Audio named after the words it says: `I-go-to-the-shop.mp3`, plus `audio.txt` with one line per file: `filename = words it says`.
+- `notes.txt`: section by section, the games chosen, every question with its right and wrong answers exactly as Andrew gave them, the story text and dialogue, section names, whether the unit is current, and what was skipped.
+- `dates.txt`: one line per section, `Section title = YYYY-MM-DD`, the day it opens for learners (UK time). A section without a date stays locked.
 
-Files the task has processed are listed in `CONTENT_LOG.md` with their Drive modification times, so a changed file is picked up again and an unchanged one is not.
+Files under about 10 MB each; pictures only need to be about 600 px wide and audio one word or sentence.
