@@ -7,8 +7,8 @@
 Andrew has tested every game on the live page on a real phone. This scheduled build task has finished its job and should be **paused**.
 
 **Next steps for Andrew**
-1. **Pause this scheduled task** in Claude Code (the task list, then pause or delete "build the Literacies Plus homework page"). Leaving it running does no harm, but each run will only re-read this log and report that there is nothing to build.
-2. **Set up the content task.** A new scheduled or one-off task that turns your Shopping worksheet into the real unit. Give it: the story text, vocabulary list and dialogue; the pictures; the audio files you have lined up; which games go in which of the five sections; and the real release dates (the date each section opens, Europe/London). It should read `units/README.md` for the exact file format, write `units/shopping/unit.json`, put the pictures and MP3s beside it (audio converted to mono MP3 at about 48 kbps), run `node test/e2e.mjs`, and push to `main`. The page updates itself a minute or two after the push.
+1. **Repurpose this scheduled task** (Andrew's decision, 2026-10-29): replace its instructions with the text in `TASK_PROMPT.md`. It then becomes the content task: each run it looks in `content/<unit>/` for new worksheets, pictures and audio, builds the unit under `units/`, tests, pushes, and reports in plain English. On a day with nothing new it does nothing. How to upload material: `content/README.md`.
+2. **Upload the Shopping material** to `content/shopping/` (worksheet, pictures, audio, dates).
 3. **Renaming sections**: change only the `title` of a section, never its `id`, so learners keep their saved scores.
 4. **Future units**: one new folder under `units/`, then add it to `units/index.json` and set `"current"` to it.
 
