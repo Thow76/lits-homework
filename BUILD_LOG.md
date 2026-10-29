@@ -9,7 +9,23 @@ Repo: Thow76/lits-homework · Pages: https://thow76.github.io/lits-homework/ · 
 | 1. Scaffold and first deploy | **Done** (code) / Pages **not enabled yet** | Pushed to `main`. No "pages build and deployment" workflow run appeared in the 80 s after the push, which means GitHub Pages is not switched on for the repo. Also, the task's network policy blocks `thow76.github.io`, so the live URL cannot be fetched from the build environment even once Pages is on. See "Andrew" below. |
 | 2. Engine | **Done** | Scoring, lives, Show answer, best scores, home, finished, Start again, date locking, three counter events. Tested headless at 390px (52 checks pass). |
 | 3. Activity types | **Done** | All 13 types, `js/icons.js`, `units/README.md`, dummy unit covering every type. Tested headless. |
-| 4. End-to-end on the live Pages URL | **Not started** | Needs Pages enabled and the host reachable. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same 52 checks against the live site. |
+| 4. End-to-end on the live Pages URL | **Blocked on Andrew** (checked again 2026-10-29) | Pages is still not enabled (the repo has no "pages build and deployment" run) and `thow76.github.io` is still blocked by this task's network policy. Local suite re-run on the same commit: 52/52 pass. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same checks against the live site once both are fixed. |
+
+## Run 2 — 2026-10-29
+
+Nothing new to build: Stages 1–3 are complete and Stage 4 needs the live site.
+
+### Checked
+- GitHub Actions on the repo: zero workflow runs, so GitHub Pages has still not been enabled (enabling it creates a "pages build and deployment" run within a minute of the next push).
+- `https://thow76.github.io/lits-homework/` from this environment: the proxy refuses the connection (403 CONNECT) and the hostname does not resolve. The host is outside the task's allowed network domains.
+- Local end-to-end suite (`node test/e2e.mjs`, headless Chromium 390×844) on commit `ca1a96b`: 52 passed, 0 failed. This covers every Stage 4 item that can be tested without the live URL: all activity types, Show answer, Start again, best score across a reload, locked/open by date, Arabic labels with browser language `ar`, offline reload after first load, manifest validity, console errors.
+
+### Still needed from Andrew before Stage 4 can finish
+1. Enable GitHub Pages: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main`, folder `/ (root)` → Save**. The site appears at https://thow76.github.io/lits-homework/ a minute or two later. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone to see the test unit.
+2. Allow `thow76.github.io` in this task's environment network settings (Claude Code → the environment this task runs in → network policy / allowed domains). Without it the live check can only be done by Andrew on a phone.
+3. GoatCounter site code (`GOATCOUNTER_CODE` in `index.html`) — unchanged.
+
+If item 2 cannot be done, Stage 4 can be closed by Andrew running the phone punch list below against the live URL; the automated checks already pass locally on the identical files Pages will serve.
 
 ## Run 1 — 2026-10-28
 
