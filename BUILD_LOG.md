@@ -2,6 +2,16 @@
 
 > **Reporting rule for every run (Andrew's request, 2026-10-29):** write the log and the notification in plain English for a tutor, not a developer. Explain every technical term the first time it appears, say what has been done, what has not, and give step-by-step click-by-click instructions for anything Andrew has to do himself. Never say "enable Pages" or "allow the host" without saying what that means and where to click.
 
+## BUILD COMPLETE — 2026-10-29
+
+Andrew has tested every game on the live page on a real phone. This scheduled build task has finished its job and should be **paused**.
+
+**Next steps for Andrew**
+1. **Pause this scheduled task** in Claude Code (the task list, then pause or delete "build the Literacies Plus homework page"). Leaving it running does no harm, but each run will only re-read this log and report that there is nothing to build.
+2. **Set up the content task.** A new scheduled or one-off task that turns your Shopping worksheet into the real unit. Give it: the story text, vocabulary list and dialogue; the pictures; the audio files you have lined up; which games go in which of the five sections; and the real release dates (the date each section opens, Europe/London). It should read `units/README.md` for the exact file format, write `units/shopping/unit.json`, put the pictures and MP3s beside it (audio converted to mono MP3 at about 48 kbps), run `node test/e2e.mjs`, and push to `main`. The page updates itself a minute or two after the push.
+3. **Renaming sections**: change only the `title` of a section, never its `id`, so learners keep their saved scores.
+4. **Future units**: one new folder under `units/`, then add it to `units/index.json` and set `"current"` to it.
+
 ## Where things stand, in plain English (updated 2026-10-29)
 
 **What is finished.** The whole homework web page has been written and tested. That means: the home screen with the unit score and progress bar; the five Shopping sections (currently empty placeholders); all thirteen activity types (match, which word, understanding, word order, spell it, person/place/thing, conversation order, audio true/false, listen and choose, missing word, capital letters, yes/no); the scoring with three lives and "Show answer"; sections that lock until their release date; "Start again" with an "Are you sure?" step; Arabic labels under the English words when the phone is set to Arabic; working offline after the first visit; and the "Add to Home Screen" icon. An automatic test drives the page in a pretend phone browser and checks 52 things. All 52 pass.
@@ -36,7 +46,7 @@ Repo: Thow76/lits-homework · Pages: https://thow76.github.io/lits-homework/ · 
 | 1. Scaffold and first deploy | **Done** (code) / Pages **not enabled yet** | Pushed to `main`. No "pages build and deployment" workflow run appeared in the 80 s after the push, which means GitHub Pages is not switched on for the repo. Also, the task's network policy blocks `thow76.github.io`, so the live URL cannot be fetched from the build environment even once Pages is on. See "Andrew" below. |
 | 2. Engine | **Done** | Scoring, lives, Show answer, best scores, home, finished, Start again, date locking, three counter events. Tested headless at 390px (52 checks pass). |
 | 3. Activity types | **Done** | All 13 types, `js/icons.js`, `units/README.md`, dummy unit covering every type. Tested headless. |
-| 4. End-to-end on the live Pages URL | **Pages is live (2026-10-29 20:03); automated live check still blocked** | Pages is on and deploying from `main`. `thow76.github.io` is still blocked by this task's network policy, so the live check must be done by Andrew on a phone (list below) unless the domain is allowed. Local suite re-run on the same commit: 52/52 pass. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same checks against the live site once both are fixed. |
+| 4. End-to-end on the live Pages URL | **Done** (2026-10-29) | Pages is live and deploying from `main`. Andrew played every game in the test unit on a real phone and everything worked. The automated live check could not run from this environment (host blocked) but the same 52 checks pass locally on the identical files. Andrew's feedback: the test unit's placeholder pictures (coloured boxes with the word written in) and beep audio make some games look odd; real content fixes that. | Local suite re-run on the same commit: 52/52 pass. `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs` runs the same checks against the live site once both are fixed. |
 
 ## Run 2 — 2026-10-29
 
