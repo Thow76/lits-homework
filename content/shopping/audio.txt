@@ -1,0 +1,5 @@
+basket.mp3 = basket
+rice.mp3 = rice
+self-checkout.mp3 = self-checkout
+shop-assistant.mp3 = shop assistant
+shopping-list.mp3 = shopping list
