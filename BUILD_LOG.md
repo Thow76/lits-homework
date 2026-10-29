@@ -22,7 +22,7 @@
    - **Do nothing and check it yourself on a phone** using the list under "Only testable on a real phone" below. The automatic checks already pass on exactly the files Pages will publish, so this is enough. **Recommended.**
    - Or, in Claude Code on the web (https://claude.ai/code), open the settings for the environment this scheduled task runs in, find the network access setting, and add `thow76.github.io` to the allowed websites (or choose full internet access). Then the next run will test the live page automatically. GitHub's guide to these settings: https://code.claude.com/docs/en/claude-code-on-the-web
 
-3. **Give me the GoatCounter code.** GoatCounter is the free, anonymous visitor counter the spec asked for. Sign up at https://www.goatcounter.com, choose a site code (for example `litshomework`, which gives you the address litshomework.goatcounter.com), and tell me the code or paste it into `index.html` in place of `GOATCOUNTER_CODE`. Until then the page simply does not count visits; nothing else is affected.
+3. ~~Give me the GoatCounter code.~~ **Done 2026-10-29.** The code is `lits-homework-counter`; Andrew's stats page is https://lits-homework-counter.goatcounter.com. The page sends only three anonymous events (opened, section finished, unit finished); nothing identifies a learner.
 
 **After that, the only remaining work is content.** The Shopping unit has five empty sections with release dates set to 2099. You need to supply the real questions, pictures and audio and the real opening dates. The format is described in `units/README.md`; an automated task can produce the unit file from it.
 
@@ -50,7 +50,7 @@ Nothing new to build: Stages 1–3 are complete and Stage 4 needs the live site.
 ### Still needed from Andrew before Stage 4 can finish
 1. Enable GitHub Pages: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main`, folder `/ (root)` → Save**. The site appears at https://thow76.github.io/lits-homework/ a minute or two later. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone to see the test unit.
 2. Allow `thow76.github.io` in this task's environment network settings (Claude Code → the environment this task runs in → network policy / allowed domains). Without it the live check can only be done by Andrew on a phone.
-3. GoatCounter site code (`GOATCOUNTER_CODE` in `index.html`) — unchanged.
+3. ~~GoatCounter site code~~ — done 2026-10-29.
 
 If item 2 cannot be done, Stage 4 can be closed by Andrew running the phone punch list below against the live URL; the automated checks already pass locally on the identical files Pages will serve.
 
@@ -86,8 +86,8 @@ Home totals count open sections only; section released yesterday open, released 
 ### Andrew must decide or supply
 1. **GitHub Pages is not enabled** (no deployment run after the push). Enable it: repo Settings → Pages → Source "Deploy from a branch" → `main` / `/ (root)`. Then open https://thow76.github.io/lits-homework/?unit=dummy on a phone.
 2. **Network policy for this task**: the environment could not reach `thow76.github.io` (blocked by the session's network settings), so Stage 4 (live end-to-end) cannot run until that host is allowed for the task's environment. Everything else was tested locally.
-3. **GoatCounter site code**: replace `GOATCOUNTER_CODE` in `index.html` (one place).
-4. Real Shopping content: images, MP3s and `unit.json` per `units/README.md`, plus the real `release` dates.
+3. ~~GoatCounter site code~~ — done 2026-10-29 (`lits-homework-counter`).
+4. Real Shopping content: images, MP3s and `unit.json` per `units/README.md`, plus the real `release` dates. Andrew plans to rename the sections later: when renaming, keep each section's `id` unchanged and change only `title`, so learners' saved best scores (keyed by id) are kept.
 
 ### Left to do
 - Stage 4 on the live URL (blocked on items 1–2 above). Next run: retry fetching the Pages URL; if reachable, run `BASE=https://thow76.github.io/lits-homework/ node test/e2e.mjs`, fix anything small, write the punch list.
