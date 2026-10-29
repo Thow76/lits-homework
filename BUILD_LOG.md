@@ -1,5 +1,32 @@
 # Build log — Literacies Plus homework page
 
+> **Reporting rule for every run (Andrew's request, 2026-10-29):** write the log and the notification in plain English for a tutor, not a developer. Explain every technical term the first time it appears, say what has been done, what has not, and give step-by-step click-by-click instructions for anything Andrew has to do himself. Never say "enable Pages" or "allow the host" without saying what that means and where to click.
+
+## Where things stand, in plain English (updated 2026-10-29)
+
+**What is finished.** The whole homework web page has been written and tested. That means: the home screen with the unit score and progress bar; the five Shopping sections (currently empty placeholders); all thirteen activity types (match, which word, understanding, word order, spell it, person/place/thing, conversation order, audio true/false, listen and choose, missing word, capital letters, yes/no); the scoring with three lives and "Show answer"; sections that lock until their release date; "Start again" with an "Are you sure?" step; Arabic labels under the English words when the phone is set to Arabic; working offline after the first visit; and the "Add to Home Screen" icon. An automatic test drives the page in a pretend phone browser and checks 52 things. All 52 pass.
+
+**What is not finished.** The page is not on the internet yet. All the files are saved in the GitHub repository (the online folder at github.com/Thow76/lits-homework), but GitHub only turns a repository into a public website when you switch on a feature called **GitHub Pages**. It is off by default and only the account owner can switch it on. Until then the address https://thow76.github.io/lits-homework/ shows "404 There isn't a GitHub Pages site here".
+
+**The three things only Andrew can do**
+
+1. **Switch on GitHub Pages (five clicks, two minutes).**
+   - Go to https://github.com/Thow76/lits-homework and sign in.
+   - Click the **Settings** tab (the cog, far right of the row that starts Code · Issues · Pull requests).
+   - In the left-hand menu click **Pages**.
+   - Under "Build and deployment", in the **Source** dropdown choose **Deploy from a branch**.
+   - Under **Branch** choose **main** in the first dropdown and **/ (root)** in the second, then click **Save**.
+   - Wait two or three minutes, then open https://thow76.github.io/lits-homework/ on your phone. You should see the home screen with the five locked Shopping sections. To see the test unit with every activity type, open https://thow76.github.io/lits-homework/?unit=dummy instead.
+
+2. **Let this automated task see the live page (optional).** This task runs on a computer in the cloud that, for safety, is only allowed to talk to a short list of websites. The finished page's address, thow76.github.io, is not on that list, so the task cannot open the live page to check it. You can either:
+   - **Do nothing and check it yourself on a phone** using the list under "Only testable on a real phone" below. The automatic checks already pass on exactly the files Pages will publish, so this is enough. **Recommended.**
+   - Or, in Claude Code on the web (https://claude.ai/code), open the settings for the environment this scheduled task runs in, find the network access setting, and add `thow76.github.io` to the allowed websites (or choose full internet access). Then the next run will test the live page automatically. GitHub's guide to these settings: https://code.claude.com/docs/en/claude-code-on-the-web
+
+3. **Give me the GoatCounter code.** GoatCounter is the free, anonymous visitor counter the spec asked for. Sign up at https://www.goatcounter.com, choose a site code (for example `litshomework`, which gives you the address litshomework.goatcounter.com), and tell me the code or paste it into `index.html` in place of `GOATCOUNTER_CODE`. Until then the page simply does not count visits; nothing else is affected.
+
+**After that, the only remaining work is content.** The Shopping unit has five empty sections with release dates set to 2099. You need to supply the real questions, pictures and audio and the real opening dates. The format is described in `units/README.md`; an automated task can produce the unit file from it.
+
+
 Repo: Thow76/lits-homework · Pages: https://thow76.github.io/lits-homework/ · Test unit: add `?unit=dummy`
 
 ## Stage status
