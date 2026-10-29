@@ -2,10 +2,164 @@
   "id": "shopping",
   "title": "Shopping",
   "sections": [
-    { "id": "vocabulary", "title": "Vocabulary and first practice", "release": "2099-01-01", "activities": [] },
-    { "id": "story", "title": "Whole story", "release": "2099-01-08", "activities": [] },
-    { "id": "understanding", "title": "Understanding the story", "release": "2099-01-15", "activities": [] },
-    { "id": "conversation", "title": "Conversation practice", "release": "2099-01-22", "activities": [] },
-    { "id": "personalisation", "title": "Personalisation", "release": "2099-01-29", "activities": [] }
+    {
+      "id": "vocabulary",
+      "title": "Vocabulary and first practice",
+      "release": "2026-10-29",
+      "activities": [
+        {
+          "type": "match",
+          "title": "Match the picture to the word.",
+          "items": [
+            {
+              "image": "rice.jpg",
+              "options": [
+                "self-checkout",
+                "basket",
+                "shopping list",
+                "shop assistant",
+                "rice"
+              ],
+              "answer": "rice"
+            },
+            {
+              "image": "shopping-list.jpg",
+              "options": [
+                "self-checkout",
+                "basket",
+                "shopping list",
+                "shop assistant",
+                "rice"
+              ],
+              "answer": "shopping list"
+            },
+            {
+              "image": "shop-assistant.jpg",
+              "options": [
+                "self-checkout",
+                "basket",
+                "shopping list",
+                "shop assistant",
+                "rice"
+              ],
+              "answer": "shop assistant"
+            },
+            {
+              "image": "self-checkout.jpg",
+              "options": [
+                "self-checkout",
+                "basket",
+                "shopping list",
+                "shop assistant",
+                "rice"
+              ],
+              "answer": "self-checkout"
+            },
+            {
+              "image": "basket.jpg",
+              "options": [
+                "self-checkout",
+                "basket",
+                "shopping list",
+                "shop assistant",
+                "rice"
+              ],
+              "answer": "basket"
+            }
+          ]
+        },
+        {
+          "type": "which-word",
+          "title": "Complete the sentence with the missing word.",
+          "items": [
+            {
+              "prompt": "She has a ___.",
+              "options": [
+                "shopping list",
+                "rice",
+                "basket",
+                "self-checkout"
+              ],
+              "answer": "shopping list"
+            },
+            {
+              "prompt": "A shop assistant helps Anita to find ___.",
+              "options": [
+                "shopping list",
+                "rice",
+                "basket",
+                "self-checkout"
+              ],
+              "answer": "rice"
+            },
+            {
+              "prompt": "Anita has everything on her list in the ___.",
+              "options": [
+                "shopping list",
+                "rice",
+                "basket",
+                "self-checkout"
+              ],
+              "answer": "basket"
+            },
+            {
+              "prompt": "She pays at the ___.",
+              "options": [
+                "shopping list",
+                "rice",
+                "basket",
+                "self-checkout"
+              ],
+              "answer": "self-checkout"
+            }
+          ]
+        },
+        {
+          "type": "spell-it",
+          "title": "Spell it",
+          "items": [
+            {
+              "word": "self-checkout",
+              "image": "self-checkout.jpg",
+              "audio": "self-checkout.mp3"
+            },
+            {
+              "word": "rice",
+              "image": "rice.jpg",
+              "audio": "rice.mp3"
+            },
+            {
+              "word": "basket",
+              "image": "basket.jpg",
+              "audio": "basket.mp3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "title": "Whole story",
+      "release": "2099-01-08",
+      "activities": []
+    },
+    {
+      "id": "understanding",
+      "title": "Understanding the story",
+      "release": "2099-01-15",
+      "activities": []
+    },
+    {
+      "id": "conversation",
+      "title": "Conversation practice",
+      "release": "2099-01-22",
+      "activities": []
+    },
+    {
+      "id": "personalisation",
+      "title": "Personalisation",
+      "release": "2099-01-29",
+      "activities": []
+    }
   ]
 }

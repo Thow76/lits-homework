@@ -1,0 +1,26 @@
+UNIT: Shopping (story: Anita goes shopping). Worksheet: shopping_worksheet_full_class.pdf (30 pages).
+Current unit for learners: yes (already set in units/index.json).
+Working method: content is taken from the worksheet, section by section; Andrew confirms. Audio voice: ElevenLabs "Charles - Expressive, Mature and Clear", model eleven_multilingual_v2.
+
+=== SECTION 1: Vocabulary and first practice (worksheet pages 2-6) - BUILT AND LIVE, opens 2026-10-29 ===
+Games: Match, Which word, Spell it.
+Match - "Match the picture to the word." (page 2). Pictures: rice.jpg, shopping-list.jpg, shop-assistant.jpg, self-checkout.jpg, basket.jpg.
+  Words (options on every question): self-checkout, basket, shopping list, shop assistant, rice. Each picture's right answer is its own word.
+Which word - "Complete the sentence with the missing word." (page 3). Options for every question: shopping list / rice / basket / self-checkout.
+  1. She has a ___.  = shopping list
+  2. A shop assistant helps Anita to find ___.  = rice
+  3. Anita has everything on her list in the ___.  = basket
+  4. She pays at the ___.  = self-checkout
+  (Right answers worked out from the story, page 7; Andrew to confirm. The worksheet shows all four words as choices, so all four are used.)
+Spell it (page 2, "Copy the words"). Built with: rice, basket, self-checkout (picture + audio each).
+  NOT BUILT: "shopping list" and "shop assistant" - the letter tiles cannot show a space between two words. Pictures and audio are saved, ready to use if the page is changed.
+Audio saved: basket.mp3, rice.mp3, self-checkout.mp3, shop-assistant.mp3, shopping-list.mp3 (see audio.txt).
+
+=== SECTIONS 2-5: NOT YET COLLECTED. Plan agreed from worksheet, waiting for Andrew's go-ahead ===
+2 Whole story (pages 7-13): story text (9 sentences) - Anita is at the supermarket. / She has a shopping list. / The list helps her to do the shopping. / It helps her to remember what she needs. / She looks at her list when she shops. / She buys milk, bread, and bananas. / A shop assistant helps Anita to find rice. / Anita has everything on her list in the basket. / She pays at the self-checkout.
+   Games planned: Word order (page 4), Capital letters, Person place or thing (page 17).
+3 Understanding the story (pages 14-21), 4 Conversation practice (pages 22-25), 5 Personalisation (pages 26-30): to be agreed.
+
+SKIPPED / MISSING SO FAR
+- No release dates for sections 2-5 (they stay locked until a date is given).
+- Story and conversation audio not made yet.
