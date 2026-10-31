@@ -80,7 +80,8 @@
                 "basket",
                 "self-checkout"
               ],
-              "answer": "shopping list"
+              "answer": "shopping list",
+              "image": "she-has-a-shopping-list.jpg"
             },
             {
               "prompt": "A shop assistant helps Anita to find ___.",
@@ -90,7 +91,8 @@
                 "basket",
                 "self-checkout"
               ],
-              "answer": "rice"
+              "answer": "rice",
+              "image": "a-shop-assistant-helps-Anita-to-find-rice.jpg"
             },
             {
               "prompt": "Anita has everything on her list in the ___.",
@@ -100,7 +102,8 @@
                 "basket",
                 "self-checkout"
               ],
-              "answer": "basket"
+              "answer": "basket",
+              "image": "Anita-has-everything-on-her-list-in-the-basket.jpg"
             },
             {
               "prompt": "She pays at the ___.",
@@ -110,7 +113,8 @@
                 "basket",
                 "self-checkout"
               ],
-              "answer": "self-checkout"
+              "answer": "self-checkout",
+              "image": "she-pays-at-the-self-checkout.jpg"
             }
           ]
         },
