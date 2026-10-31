@@ -85,10 +85,22 @@
     render(ctx) {
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
-      addPrompt(ctx, ctx.root, it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null);
+      // Optional "clue" picture: hidden at first; a Clue button appears after a wrong tap and reveals it.
+      addPrompt(ctx, ctx.root, it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null, it.clue ? 'sentence' : '');
+      let clueImg = null, clueBtn = null;
+      if (it.clue) {
+        clueImg = ctx.el('img', 'qimg'); clueImg.src = ctx.asset(it.clue); clueImg.alt = ''; clueImg.hidden = true;
+        ctx.root.appendChild(clueImg);
+      }
       addListen(ctx, ctx.root, it.audio);
       const options = (ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options)).map((o) => ({ text: o, value: o }));
-      return choice(ctx, { options, answer: it.answer });
+      const h = choice(ctx, { options, answer: it.answer,
+        onWrong() {
+          if (!clueImg || !clueImg.hidden || clueBtn) return;
+          clueBtn = ctx.mkBtn('clue', null, '', () => { clueImg.hidden = false; clueBtn.hidden = true; });
+          ctx.root.appendChild(clueBtn);
+        } });
+      return h;
     }
   };
 

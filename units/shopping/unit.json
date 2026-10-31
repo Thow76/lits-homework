@@ -76,33 +76,45 @@
               "prompt": "She has a ___.",
               "options": [
                 "shopping list",
-                "rice"
+                "rice",
+                "basket",
+                "self-checkout"
               ],
-              "answer": "shopping list"
+              "answer": "shopping list",
+              "clue": "she-has-a-shopping-list.jpg"
             },
             {
               "prompt": "A shop assistant helps Anita to find ___.",
               "options": [
+                "shopping list",
                 "rice",
+                "basket",
                 "self-checkout"
               ],
-              "answer": "rice"
+              "answer": "rice",
+              "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg"
             },
             {
               "prompt": "Anita has everything on her list in the ___.",
               "options": [
+                "shopping list",
+                "rice",
                 "basket",
                 "self-checkout"
               ],
-              "answer": "basket"
+              "answer": "basket",
+              "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg"
             },
             {
               "prompt": "She pays at the ___.",
               "options": [
-                "self-checkout",
-                "shopping list"
+                "shopping list",
+                "rice",
+                "basket",
+                "self-checkout"
               ],
-              "answer": "self-checkout"
+              "answer": "self-checkout",
+              "clue": "she-pays-at-the-self-checkout.jpg"
             }
           ]
         },
