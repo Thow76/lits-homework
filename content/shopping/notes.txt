@@ -37,4 +37,4 @@ REVISIONS
 - 2026-10-31 Clue button did not show on Andrew's phone (old app code saved on the phone). FIX (Andrew agreed): sw.js CACHE_VERSION lits-v1 -> lits-v2 so phones fetch the new app code. Confirmed working by Andrew: NOT YET.
 - 2026-10-31 CONFIRMED by Andrew on his phone: Which word with 4 choices, bold sentence and Clue button after a wrong tap works. Section 1 Which word revision is closed. (Four right answers still to be confirmed by Andrew.)
 
-SECTION 2 (Whole story) - AUDIO RECEIVED 2026-10-31 (content only, nothing built yet): story sentences 1, 6, 7, 8, 9 saved as mp3 (mono 48 kbps). STILL MISSING: sentences 2, 3, 4, 5 (She has a shopping list. / The list helps her to do the shopping. / It helps her to remember what she needs. / She looks at her list when she shops.). Games and dates for Section 2 not yet agreed.
+SECTION 2 (Whole story) - AUDIO RECEIVED 2026-10-31 (content only, nothing built yet): story sentences 1, 6, 7, 8, 9 saved as mp3 (mono 48 kbps). Sentences 2, 3, 4, 5 received and saved too: ALL 9 story sentences now have audio. Games and dates for Section 2 not yet agreed.
