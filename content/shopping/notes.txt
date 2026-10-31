@@ -21,6 +21,10 @@ Audio saved: basket.mp3, rice.mp3, self-checkout.mp3, shop-assistant.mp3, shoppi
    Games planned: Word order (page 4), Capital letters, Person place or thing (page 17).
 3 Understanding the story (pages 14-21), 4 Conversation practice (pages 22-25), 5 Personalisation (pages 26-30): to be agreed.
 
+OPEN ISSUES (raised by Andrew, 2026-10-31)
+- Section 1, Which word: AMBIGUOUS, needs changing. Each sentence has only a gap, so more than one choice fits the grammar and the learner cannot tell which is meant (e.g. "She has a ___." - shopping list AND basket both work; "She pays at the ___." and others can also overlap). This will frustrate learners. Not yet fixed. Fix to be agreed with Andrew: the question must clearly link to the story (e.g. add a clue or picture, or reword so only one choice fits). Right answers must not change unless Andrew says.
+- Section 1, Which word answers (shopping list / rice / basket / self-checkout) still not confirmed by Andrew.
+
 SKIPPED / MISSING SO FAR
 - No release dates for sections 2-5 (they stay locked until a date is given).
 - Story and conversation audio not made yet.
