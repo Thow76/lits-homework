@@ -30,3 +30,6 @@ OPEN ISSUES (raised by Andrew, 2026-10-31)
 SKIPPED / MISSING SO FAR
 - No release dates for sections 2-5 (they stay locked until a date is given).
 - Story and conversation audio not made yet.
+
+REVISIONS
+- 2026-10-31 Section 1, Which word: sentences with 4 choices were ambiguous. Pictures added, but learners tapped the word matching the picture and ignored the sentence. CHANGED: no pictures; two choices per question, one clearly wrong (Andrew agreed). Pairs: She has a ___. shopping list / rice. A shop assistant helps Anita to find ___. rice / self-checkout. Anita has everything on her list in the ___. basket / self-checkout. She pays at the ___. self-checkout / shopping list. Right answers unchanged. Pictures kept in content/shopping/ (not used in the game). Confirmed working: NOT YET (waiting for Andrew's phone test).
