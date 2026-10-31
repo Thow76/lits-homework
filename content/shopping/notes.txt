@@ -23,6 +23,7 @@ Audio saved: basket.mp3, rice.mp3, self-checkout.mp3, shop-assistant.mp3, shoppi
 
 OPEN ISSUES (raised by Andrew, 2026-10-31)
 - Section 1, Which word: AMBIGUOUS, needs changing. Each sentence has only a gap, so more than one choice fits the grammar and the learner cannot tell which is meant (e.g. "She has a ___." - shopping list AND basket both work; "She pays at the ___." and others can also overlap). This will frustrate learners. Not yet fixed. Fix to be agreed with Andrew: the question must clearly link to the story (e.g. add a clue or picture, or reword so only one choice fits). Right answers must not change unless Andrew says.
+- DECISION (Andrew, 2026-10-31): the Which word sentences must stay exactly as they are (they are the story's own phrases). To remove the ambiguity, each of the 4 questions gets its own picture that shows the moment in the story. Andrew will supply the 4 pictures. The app already supports one picture per question. Waiting for the pictures; then add them to content/shopping/ and units/shopping/ and test.
 - Section 1, Which word answers (shopping list / rice / basket / self-checkout) still not confirmed by Andrew.
 
 SKIPPED / MISSING SO FAR
