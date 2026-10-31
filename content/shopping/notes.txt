@@ -38,3 +38,10 @@ REVISIONS
 - 2026-10-31 CONFIRMED by Andrew on his phone: Which word with 4 choices, bold sentence and Clue button after a wrong tap works. Section 1 Which word revision is closed. (Four right answers still to be confirmed by Andrew.)
 
 SECTION 2 (Whole story) - AUDIO RECEIVED 2026-10-31 (content only, nothing built yet): story sentences 1, 6, 7, 8, 9 saved as mp3 (mono 48 kbps). Sentences 2, 3, 4, 5 received and saved too: ALL 9 story sentences now have audio. Games and dates for Section 2 not yet agreed.
+
+SECTION 2 (Whole story) - GAME 1 AGREED: WORD ORDER (worksheet page 4, "Build from words"; Andrew said start with this one). Learners tap word tiles to build the sentence. Right answers are the story sentences; audio plays with each.
+  1. words: has / She / a (+ shopping list.)  -> She has a shopping list.  audio: She-has-a-shopping-list.mp3
+  2. helps / A / find / to / Anita / shop assistant (+ rice.) -> A shop assistant helps Anita to find rice. audio: A-shop-assistant-helps-Anita-to-find-rice.mp3
+  3. everything / has / in / her / on / the / list / Anita (+ basket.) -> Anita has everything on her list in the basket. audio: Anita-has-everything-on-her-list-in-the-basket.mp3
+  4. at / She / the / pays (+ self-checkout.) -> She pays at the self-checkout. audio: She-pays-at-the-self-checkout.mp3
+  (Only 4 questions: a little low. Could add 2-3 more from the story sentences if Andrew wants.) Other Section 2 games (Capital letters, Person place or thing) not yet agreed. Opening date: not set. Section 2 NOT BUILT yet.
