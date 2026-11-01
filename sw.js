@@ -3,14 +3,14 @@
    - Unit JSON (units/**.json): network first, cache fallback, so newly opened sections appear.
    - Images and audio: cache first, fetched once and kept.
    Bump CACHE_VERSION when shipping breaking changes to the shell. */
-const CACHE_VERSION = 'lits-v5';
+const CACHE_VERSION = 'lits-v6';
 const SHELL = [
   './', './index.html', './css/style.css', './js/icons.js', './js/activities.js', './js/app.js',
   './strings.json', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE_VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE_VERSION).then((c) => Promise.all(SHELL.map((u) => fetch(u, { cache: 'reload' }).then((r) => { if (r.ok) return c.put(u, r); })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
@@ -75,7 +75,7 @@ async function staleWhileRevalidate(req) {
   const c = await caches.open(CACHE_VERSION);
   const key = req.mode === 'navigate' ? './index.html' : req;
   const hit = await c.match(key);
-  const net = fetch(req).then((r) => { if (r.ok) c.put(key, r.clone()); return r; }).catch(() => null);
+  const net = fetch(req, { cache: 'no-cache' }).then((r) => { if (r.ok) c.put(key, r.clone()); return r; }).catch(() => null);
   if (hit) { net.catch(() => {}); return hit; }
   const r = await net;
   return r || new Response('Offline', { status: 503 });
