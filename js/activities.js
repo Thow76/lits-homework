@@ -341,7 +341,6 @@
       const slotsN = Math.max(13, word.length); // same box size for every word
       const lineBox = ctx.el('div', 'line spell-line'); lineBox.id = 'spellLine';
       const poolBox = ctx.el('div', 'spell-pool'); poolBox.id = 'spellPool';
-      poolBox.style.gridTemplateColumns = 'repeat(' + Math.ceil(tiles.length / 2) + ', minmax(0, 1fr))';
       ctx.root.appendChild(lineBox); ctx.root.appendChild(poolBox);
       const tileBtns = tiles.map((tile) => {
         const t = ctx.el('button', 'tile letter', tile.text); t.type = 'button';
