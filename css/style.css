@@ -148,6 +148,13 @@ button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus)
 .tile:active { background: #dbe7f2; }
 .tile.ghost { visibility: hidden; }
 .tile.letter { min-width: var(--tap); padding: 0.5rem; font-size: 1.5rem; text-transform: none; }
+.spell-line { flex-wrap: nowrap; justify-content: center; gap: 4px; }
+.spell-box { box-sizing: border-box; min-width: 0; height: 2.75rem; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; font-weight: 600; border: 1px solid var(--line); border-radius: 0.375rem; background: var(--card); }
+.spell-box.filled { border-color: var(--brand); }
+.spell-pool { display: grid; gap: var(--gap); margin: 1rem 0; }
+.spell-pool .tile.letter { min-width: 0; padding: 0.25rem; }
+.tile.letter.used, .tile.letter.used:disabled { background: #d9dde2; border-color: #c3c8cf; color: #8a9099; }
+.spell-actions { display: flex; gap: var(--gap); justify-content: flex-end; margin: 0.5rem 0 1rem; }
 .slot { min-height: var(--tap); min-width: var(--tap); border: 2px dashed var(--line); border-radius: var(--radius); background: transparent; }
 .tile.placed { background: var(--card); }
 .tile.cap { color: var(--good); border-color: var(--good); }

@@ -65,7 +65,8 @@ async function solveCurrent(page) {
       for (const w of it.sentence.trim().split(/\s+/)) await page.locator('#wordPool .tile', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
       await page.locator('#confirmBtn').click(); break;
     case 'spell-it':
-      for (const c of it.word) await page.locator('#spellPool .tile', { hasText: new RegExp('^' + c + '$') }).first().click(); break;
+      for (const c of it.word) await page.locator('#spellPool .tile:not(.used)', { hasText: new RegExp('^' + c + '$') }).first().click();
+      await page.locator('#confirmBtn').click(); break;
     case 'conversation-order':
       for (const l of it.lines) await page.locator('#convoPool .opt', { hasText: l.text }).click(); break;
     case 'find-and-fix':

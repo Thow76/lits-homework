@@ -333,45 +333,53 @@
       const word = String(it.word);
       const letters = word.split('').map((c, i) => ({ id: i, text: c }));
       const extra = String(it.extra || '').split('').filter(Boolean).map((c, i) => ({ id: 100 + i, text: c }));
-      let pool = ctx.shuffle(letters.concat(extra));
-      let line = [];
-      const lineBox = ctx.el('div', 'line'); lineBox.id = 'spellLine';
-      const poolBox = ctx.el('div', 'pool'); poolBox.id = 'spellPool';
+      // Letters sit in a fixed grid (two rows at most) and never move. A tapped letter goes grey and is added
+      // to the word, which stays on one row. Undo takes back the last letter; Check marks the word.
+      const tiles = ctx.shuffle(letters.concat(extra));
+      let line = [];      // tiles chosen so far, in order
+      let locked = false; // true once the word has been checked
+      const slotsN = Math.max(13, word.length); // same box size for every word
+      const lineBox = ctx.el('div', 'line spell-line'); lineBox.id = 'spellLine';
+      const poolBox = ctx.el('div', 'spell-pool'); poolBox.id = 'spellPool';
+      poolBox.style.gridTemplateColumns = 'repeat(' + Math.ceil(tiles.length / 2) + ', minmax(0, 1fr))';
       ctx.root.appendChild(lineBox); ctx.root.appendChild(poolBox);
-      let wrongShown = false;
-      function render() {
+      const tileBtns = tiles.map((tile) => {
+        const t = ctx.el('button', 'tile letter', tile.text); t.type = 'button';
+        t.addEventListener('click', () => {
+          if (locked || !ctx.canAnswer() || line.length >= word.length || line.includes(tile)) return;
+          line.push(tile); refresh();
+        });
+        poolBox.appendChild(t); return t;
+      });
+      const undo = ctx.mkBtn('undo', null, '', () => { if (locked || !ctx.canAnswer() || !line.length) return; line.pop(); refresh(); });
+      undo.id = 'undoBtn';
+      const confirm = ctx.mkBtn('check', 'confirm', 'good', () => {
+        if (locked || !ctx.canAnswer() || line.length !== word.length) return;
+        const ok = line.map((t) => t.text).join('') === word;
+        locked = true; lineBox.classList.add(ok ? 'right' : 'wrong');
+        refresh(); ctx.answer(ok);
+      });
+      confirm.id = 'confirmBtn';
+      const actions = ctx.el('div', 'spell-actions'); actions.appendChild(undo); actions.appendChild(confirm);
+      ctx.root.appendChild(actions);
+      function refresh() {
         lineBox.innerHTML = '';
         for (let i = 0; i < word.length; i++) {
-          if (line[i]) {
-            const t = ctx.el('button', 'tile letter placed', line[i].text); t.type = 'button';
-            t.addEventListener('click', () => { if (!ctx.canAnswer()) return; pool.push(line[i]); line.splice(i, 1); render(); });
-            lineBox.appendChild(t);
-          } else lineBox.appendChild(ctx.el('span', 'slot'));
+          const box = ctx.el('span', 'spell-box' + (line[i] ? ' filled' : ''), line[i] ? line[i].text : '');
+          box.style.flex = '0 0 calc((100% - ' + ((slotsN - 1) * 4) + 'px) / ' + slotsN + ')';
+          lineBox.appendChild(box);
         }
-        poolBox.innerHTML = '';
-        pool.forEach((tile, i) => {
-          const t = ctx.el('button', 'tile letter', tile.text); t.type = 'button';
-          t.addEventListener('click', () => {
-            if (!ctx.canAnswer() || line.length >= word.length) return;
-            line.push(tile); pool.splice(i, 1); render();
-            if (line.length === word.length) check();
-          });
-          poolBox.appendChild(t);
-        });
+        tiles.forEach((tile, i) => { const used = line.includes(tile); tileBtns[i].classList.toggle('used', used); tileBtns[i].disabled = used || locked; });
+        undo.disabled = locked || !line.length;
+        confirm.disabled = locked || line.length !== word.length;
       }
-      function check() {
-        const ok = line.map((t) => t.text).join('') === word;
-        lineBox.classList.add(ok ? 'right' : 'wrong');
-        wrongShown = !ok;
-        ctx.answer(ok);
-      }
-      render();
+      refresh();
       return {
-        retry() { lineBox.classList.remove('wrong'); wrongShown = false; },
+        retry() { locked = false; line = []; lineBox.classList.remove('wrong'); refresh(); },
         reveal() {
-          line = letters.slice(); pool = []; render();
+          locked = true; line = letters.slice(); refresh();
+          tileBtns.forEach((b) => { b.disabled = true; b.classList.add('used'); });
           lineBox.classList.remove('wrong'); lineBox.classList.add('right');
-          lineBox.querySelectorAll('button').forEach((b) => { b.disabled = true; });
         }
       };
     }
