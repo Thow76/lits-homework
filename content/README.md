@@ -1,3 +1,5 @@
+> **TASK: read this first.** Before asking anything, read `content/STATUS.md` and `content/<unit>/notes.txt` (REVISIONS list). Start by saying where we got to last time and ask which open item to pick up. Only ask for the unit name if there is no STATUS.md. At the end of every session, update `content/STATUS.md`.
+
 # Content folders
 
 One folder per unit (`content/shopping/`, `content/health/`...). Andrew fills a folder by running the "Add unit material" scheduled task and attaching files in that chat; the task saves them here and pushes. The daily "Build units" task then builds `units/<unit>/` from it. Nothing in `content/` is shown to learners.
