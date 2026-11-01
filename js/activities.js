@@ -86,20 +86,20 @@
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
       // Optional "clue" picture: hidden at first; a Clue button appears after a wrong tap and reveals it.
+      // Their space is reserved from the start (below the choices) so nothing on screen jumps.
       addPrompt(ctx, ctx.root, it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null, it.clue ? 'sentence' : '');
-      let clueImg = null, clueBtn = null;
-      if (it.clue) {
-        clueImg = ctx.el('img', 'qimg'); clueImg.src = ctx.asset(it.clue); clueImg.alt = ''; clueImg.hidden = true;
-        ctx.root.appendChild(clueImg);
-      }
       addListen(ctx, ctx.root, it.audio);
       const options = (ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options)).map((o) => ({ text: o, value: o }));
       const h = choice(ctx, { options, answer: it.answer,
-        onWrong() {
-          if (!clueImg || !clueImg.hidden || clueBtn) return;
-          clueBtn = ctx.mkBtn('clue', null, '', () => { clueImg.hidden = false; clueBtn.hidden = true; });
-          ctx.root.appendChild(clueBtn);
-        } });
+        onWrong() { if (clueBtn && clueBtn.style.visibility === 'hidden' && clueImg.style.visibility === 'hidden') clueBtn.style.visibility = 'visible'; } });
+      let clueImg = null, clueBtn = null;
+      if (it.clue) {
+        clueBtn = ctx.mkBtn('clue', null, '', () => { clueImg.style.visibility = 'visible'; clueBtn.style.visibility = 'hidden'; });
+        clueBtn.style.visibility = 'hidden';
+        clueImg = ctx.el('img', 'qimg'); clueImg.src = ctx.asset(it.clue); clueImg.alt = ''; clueImg.style.visibility = 'hidden';
+        const wrap = ctx.el('div', 'clue-area'); wrap.appendChild(clueBtn); wrap.appendChild(clueImg);
+        ctx.root.appendChild(wrap);
+      }
       return h;
     }
   };

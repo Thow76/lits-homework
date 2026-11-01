@@ -3,7 +3,7 @@
    - Unit JSON (units/**.json): network first, cache fallback, so newly opened sections appear.
    - Images and audio: cache first, fetched once and kept.
    Bump CACHE_VERSION when shipping breaking changes to the shell. */
-const CACHE_VERSION = 'lits-v6';
+const CACHE_VERSION = 'lits-v7';
 const SHELL = [
   './', './index.html', './css/style.css', './js/icons.js', './js/activities.js', './js/app.js',
   './strings.json', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'
