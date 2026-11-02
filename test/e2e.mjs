@@ -80,8 +80,8 @@ async function solveCurrent(page) {
     }
     default: throw new Error('no solver for ' + q.type);
   }
-  await page.locator('#actions .btn[data-key="next"]').waitFor({ timeout: 3000 });
-  await page.locator('#actions .btn[data-key="next"]').click();
+  await page.locator('.btn[data-key="next"]').waitFor({ timeout: 3000 });
+  await page.locator('.btn[data-key="next"]').click();
   return q;
 }
 
@@ -207,7 +207,7 @@ console.log('Testing ' + URL_);
   check(await page.locator('.btn[data-key="tryAgain"]').count() === 0 && await page.locator('.btn[data-key="showAnswer"]').count() === 1, 'only Show answer after third wrong answer');
   await page.locator('.btn[data-key="showAnswer"]').click();
   check((await page.locator('#wordLine .tile.placed').allTextContents()).join(' ') === sentence, 'correct sentence revealed');
-  await page.locator('#actions .btn[data-key="next"]').click();
+  await page.locator('.btn[data-key="next"]').click();
   while (!(await page.locator('.finished').count())) await solveCurrent(page);
   check((await page.locator('#sectionScore').textContent()).trim() === `${maxQ * 5 - 5} / ${maxQ * 5}`, 'revealed question scored 0');
   check((await page.locator('.finished .best').textContent()).includes(`${maxQ * 5} / ${maxQ * 5}`), 'best score still shown on finished screen');

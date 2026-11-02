@@ -225,3 +225,9 @@ html[dir="rtl"] .section-row { text-align: right; }
 html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startAgain"] svg { transform: scaleX(-1); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Spell it: after a right answer Check shows the tick and points; Next replaces Undo */
+.btn.good.score:disabled { background: var(--good); border-color: var(--good); color: var(--brand-ink); opacity: 1; cursor: default; flex-direction: row; gap: 0.5rem; font-size: 1.5rem; }
+.spell-actions .btn { flex: 1; }
+.spell-line { margin-top: 0.75rem; }
+.actions:empty { margin-top: 0; }

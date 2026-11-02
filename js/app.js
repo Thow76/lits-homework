@@ -272,6 +272,15 @@
       const mk = document.querySelector('.qcontent .opt.right .opt-mark');
       if (mk) { // choice games: show the points inside the green answer, next to its tick
         mk.parentNode.insertBefore(el('span', 'opt-score', '+' + score), mk);
+      } else if (document.getElementById('confirmBtn') && document.getElementById('undoBtn')) {
+        // Spell it: the Check button turns into the tick and points, and Next takes the place of Undo
+        const cb = document.getElementById('confirmBtn');
+        cb.innerHTML = ''; cb.classList.add('score'); cb.disabled = true;
+        cb.appendChild(svg('tick')); cb.appendChild(el('span', null, '+' + score));
+        const nb = mkBtn('next', 'next', '', () => nextQuestion());
+        document.getElementById('undoBtn').replaceWith(nb);
+        run.qstate = 'right'; actions.scrollIntoView({ block: 'nearest' });
+        return;
       } else {
         const f = feedback(true); f.appendChild(el('span', null, '+' + score)); actions.appendChild(f);
       }
