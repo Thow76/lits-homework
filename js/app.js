@@ -276,7 +276,6 @@
       run.qstate = 'wrong';
       const lit = run.lives.querySelectorAll('svg');
       for (let i = 0; i < run.wrong && i < lit.length; i++) lit[i].classList.add('lit');
-      actions.appendChild(feedback(false));
       if (run.wrong < MAX_WRONG) {
         actions.appendChild(mkBtn('tryAgain', 'tryAgain', 'secondary', () => {
           run.qstate = 'answering'; actions.innerHTML = '';

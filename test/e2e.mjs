@@ -91,7 +91,7 @@ async function wrongCurrent(page) {
   const it = q.item;
   if (q.type === 'yes-no') await page.locator(`.opt[data-value="${it.answer ? 'no' : 'yes'}"]`).click();
   else await page.locator('.opt:not(:disabled):not([data-value="' + it.answer + '"])').first().click();
-  await page.locator('#feedback.wrong').waitFor({ timeout: 3000 });
+  await page.locator('#actions .btn.secondary').waitFor({ timeout: 3000 });
 }
 
 console.log('Testing ' + URL_);
@@ -200,7 +200,7 @@ console.log('Testing ' + URL_);
     }
     for (const w of rev) await page.locator('#wordPool .tile', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
     await page.locator('#confirmBtn').click();
-    await page.locator('#feedback.wrong').waitFor();
+    await page.locator('#actions .btn.secondary').waitFor();
     if (i < 2) { check(await page.locator('.btn[data-key="tryAgain"]').count() === 1, 'Try again after wrong confirm ' + (i + 1)); await page.locator('.btn[data-key="tryAgain"]').click(); }
   }
   check((await page.locator('#lives svg.lit').count()) === 3, 'three X marks lit');
