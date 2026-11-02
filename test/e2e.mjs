@@ -80,7 +80,7 @@ async function solveCurrent(page) {
     }
     default: throw new Error('no solver for ' + q.type);
   }
-  await page.locator('#feedback.right').waitFor({ timeout: 3000 });
+  await page.locator('#actions .btn[data-key="next"]').waitFor({ timeout: 3000 });
   await page.locator('#actions .btn[data-key="next"]').click();
   return q;
 }

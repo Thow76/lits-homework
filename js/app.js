@@ -269,7 +269,12 @@
       run.qstate = 'right';
       const score = SCORES[Math.min(run.wrong, SCORES.length - 1)];
       run.pending = score;
-      const f = feedback(true); f.appendChild(el('span', null, '+' + score)); actions.appendChild(f);
+      const mk = document.querySelector('.qcontent .opt.right .opt-mark');
+      if (mk) { // choice games: show the points inside the green answer, next to its tick
+        mk.parentNode.insertBefore(el('span', 'opt-score', '+' + score), mk);
+      } else {
+        const f = feedback(true); f.appendChild(el('span', null, '+' + score)); actions.appendChild(f);
+      }
       actions.appendChild(mkBtn('next', 'next', '', () => nextQuestion()));
     } else {
       run.wrong++;
