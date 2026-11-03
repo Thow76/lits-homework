@@ -62,7 +62,7 @@ async function solveCurrent(page) {
     case 'yes-no': await page.locator(`.opt[data-value="${it.answer ? 'yes' : 'no'}"]`).click(); break;
     case 'audio-true-false': await page.locator(`.opt[data-value="${it.answer ? 'true' : 'false'}"]`).click(); break;
     case 'word-order':
-      for (const w of it.sentence.trim().split(/\s+/)) await page.locator('#wordPool .tile', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
+      for (const w of it.sentence.trim().split(/\s+/)) await page.locator('#wordPool .tile:not(.used)', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
       await page.locator('#confirmBtn').click(); break;
     case 'spell-it':
       for (const c of it.word) await page.locator('#spellPool .tile:not(.used)', { hasText: new RegExp('^' + c + '$') }).first().click();
@@ -195,10 +195,7 @@ console.log('Testing ' + URL_);
   const sentence = await page.evaluate(() => window.LITS.run.qs[window.LITS.run.idx].item.sentence);
   const rev = sentence.trim().split(/\s+/).reverse();
   for (let i = 0; i < 3; i++) {
-    if (i > 0) { // send tiles back then rebuild wrongly
-      while (await page.locator('#wordLine .tile.placed').count()) await page.locator('#wordLine .tile.placed').first().click();
-    }
-    for (const w of rev) await page.locator('#wordPool .tile', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
+    for (const w of rev) await page.locator('#wordPool .tile:not(.used)', { hasText: new RegExp('^' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click();
     await page.locator('#confirmBtn').click();
     await page.locator('#actions .btn.secondary').waitFor();
     if (i < 2) { check(await page.locator('.btn[data-key="tryAgain"]').count() === 1, 'Try again after wrong confirm ' + (i + 1)); await page.locator('.btn[data-key="tryAgain"]').click(); }
@@ -206,7 +203,7 @@ console.log('Testing ' + URL_);
   check((await page.locator('#lives svg.lit').count()) === 3, 'three X marks lit');
   check(await page.locator('.btn[data-key="tryAgain"]').count() === 0 && await page.locator('.btn[data-key="showAnswer"]').count() === 1, 'only Show answer after third wrong answer');
   await page.locator('.btn[data-key="showAnswer"]').click();
-  check((await page.locator('#wordLine .tile.placed').allTextContents()).join(' ') === sentence, 'correct sentence revealed');
+  check((await page.locator('#wordLine .wo-text').textContent()).trim() === sentence, 'correct sentence revealed');
   await page.locator('.btn[data-key="next"]').click();
   while (!(await page.locator('.finished').count())) await solveCurrent(page);
   check((await page.locator('#sectionScore').textContent()).trim() === `${maxQ * 5 - 5} / ${maxQ * 5}`, 'revealed question scored 0');

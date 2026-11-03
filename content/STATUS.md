@@ -20,7 +20,7 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 - Phone cache is now v12 (sw.js). 2026-11-03: game icons removed from all game titles (waiting for Andrew to confirm).
 
 ## For the next session: final revisions Andrew wants to look at
-- Word order and Conversation order (and other games) still use the old big green points box at the bottom; offer to change them the same way.
+- Word order now matches Spell it (2026-11-03, waiting for Andrew to confirm). Conversation order (and other games) still use the old big green points box; offer to change it the same way.
 - Optional idea (needs Andrew's yes, app change): show a small version number on the page so he can tell whether his phone has the newest copy.
 - Ask Andrew for any other small problems from testing Section 1 (go game by game).
 

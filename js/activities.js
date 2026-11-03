@@ -245,7 +245,7 @@
     }
   };
 
-  /* ---- Word order: tap tiles to build the sentence, confirm with thumbs up ---- */
+  /* ---- Word order: tap word tiles to build the sentence on ONE line (like Spell it), then Check ---- */
   A['word-order'] = {
     icon: 'wordOrder', label: 'Word order',
     render(ctx) {
@@ -255,68 +255,59 @@
       addListen(ctx, ctx.root, it.audio);
       const target = wordsOf(it.sentence);
       const n = target.length;
-      const tiles = target.concat(it.distractors || []).map((w, i) => ({ id: i, text: w }));
-      let pool = ctx.shuffle(tiles);
+      const words = target.map((w, i) => ({ id: i, text: w }));
+      const extra = (it.distractors || []).map((w, i) => ({ id: 100 + i, text: w }));
+      // Word tiles sit in a fixed pool and never move. A tapped word goes grey and is added to the sentence,
+      // which stays on one fixed-height line. Undo takes back the last word; Check marks the sentence.
+      const tiles = ctx.shuffle(words.concat(extra));
       let line = [];
-      const lineBox = ctx.el('div'); lineBox.id = 'wordLine';
-      const poolBox = ctx.el('div', 'pool'); poolBox.id = 'wordPool';
+      let locked = false;
+      const lineBox = ctx.el('div', 'line wo-line'); lineBox.id = 'wordLine';
+      const lineText = ctx.el('span', 'wo-text'); lineBox.appendChild(lineText);
+      const poolBox = ctx.el('div', 'wo-pool'); poolBox.id = 'wordPool';
       ctx.root.appendChild(lineBox); ctx.root.appendChild(poolBox);
+      const tileBtns = tiles.map((tile) => {
+        const t = ctx.el('button', 'tile word', tile.text); t.type = 'button';
+        t.addEventListener('click', () => {
+          if (locked || !ctx.canAnswer() || line.length >= n || line.includes(tile)) return;
+          line.push(tile); refresh();
+        });
+        poolBox.appendChild(t); return t;
+      });
+      const undo = ctx.mkBtn('undo', null, '', () => { if (locked || !ctx.canAnswer() || !line.length) return; line.pop(); refresh(); });
+      undo.id = 'undoBtn';
       const confirm = ctx.mkBtn('check', 'confirm', 'good', () => {
-        if (!ctx.canAnswer() || line.length !== n) return;
+        if (locked || !ctx.canAnswer() || line.length !== n) return;
         const ok = line.map((t) => t.text).join(' ') === target.join(' ');
-        rows.forEach((r) => r.classList.add(ok ? 'right' : 'wrong'));
-        confirm.disabled = true;
-        ctx.answer(ok);
+        locked = true; lineBox.classList.add(ok ? 'right' : 'wrong');
+        refresh(); ctx.answer(ok);
       });
       confirm.id = 'confirmBtn';
-      confirm.disabled = true;
-      ctx.root.appendChild(confirm);
-
-      // Decide one or two rows by measuring tile widths.
-      let split = n; // words on the first row
-      const rows = [];
-      function measure() {
-        const probe = ctx.el('div', 'pool'); probe.style.visibility = 'hidden'; probe.style.position = 'absolute';
-        tiles.slice(0, n).forEach((t) => probe.appendChild(ctx.el('button', 'tile', t.text)));
-        ctx.root.appendChild(probe);
-        const gap = 12, avail = ctx.root.clientWidth - 20;
-        let total = -gap; Array.from(probe.children).forEach((c) => { total += c.offsetWidth + gap; });
+      const actions = ctx.el('div', 'spell-actions'); actions.appendChild(undo); actions.appendChild(confirm);
+      ctx.root.appendChild(actions);
+      // One font size for the whole sentence, so the line never changes height or size while words are added.
+      function fit() {
+        lineText.style.fontSize = '20px';
+        const probe = ctx.el('span', 'wo-text', target.join(' '));
+        probe.style.position = 'absolute'; probe.style.visibility = 'hidden'; probe.style.fontSize = '20px';
+        lineBox.appendChild(probe);
+        const avail = lineBox.clientWidth - 20, w = probe.offsetWidth;
         probe.remove();
-        if (total > avail && n > 1) split = Math.ceil(n / 2);
+        if (w > 0 && avail > 0) lineText.style.fontSize = Math.max(11, Math.min(22, 20 * avail / w)) + 'px';
       }
-      measure();
-
-      function render() {
-        lineBox.innerHTML = ''; rows.length = 0;
-        const rowsSpec = split >= n ? [[0, n]] : [[0, split], [split, n]];
-        rowsSpec.forEach(([a, b]) => {
-          const r = ctx.el('div', 'line');
-          for (let i = a; i < b; i++) {
-            if (line[i]) {
-              const t = ctx.el('button', 'tile placed', line[i].text); t.type = 'button';
-              t.addEventListener('click', () => { if (!ctx.canAnswer()) return; pool.push(line[i]); line.splice(i, 1); render(); });
-              r.appendChild(t);
-            } else r.appendChild(ctx.el('span', 'slot'));
-          }
-          rows.push(r); lineBox.appendChild(r);
-        });
-        poolBox.innerHTML = '';
-        pool.forEach((tile, i) => {
-          const t = ctx.el('button', 'tile', tile.text); t.type = 'button';
-          t.addEventListener('click', () => { if (!ctx.canAnswer() || line.length >= n) return; line.push(tile); pool.splice(i, 1); render(); });
-          poolBox.appendChild(t);
-        });
-        confirm.disabled = line.length !== n;
+      function refresh() {
+        lineText.textContent = line.map((t) => t.text).join(' ');
+        tiles.forEach((tile, i) => { const used = line.includes(tile); tileBtns[i].classList.toggle('used', used); tileBtns[i].disabled = used || locked; });
+        undo.disabled = locked || !line.length;
+        confirm.disabled = locked || line.length !== n;
       }
-      render();
+      fit(); refresh();
       return {
-        retry() { rows.forEach((r) => r.classList.remove('wrong')); confirm.disabled = line.length !== n; },
+        retry() { locked = false; line = []; lineBox.classList.remove('wrong'); refresh(); },
         reveal() {
-          line = tiles.slice(0, n); pool = [];
-          render();
-          rows.forEach((r) => { r.classList.add('right'); });
-          lineBox.querySelectorAll('button').forEach((b) => { b.disabled = true; });
-          confirm.hidden = true;
+          locked = true; line = words.slice(); refresh();
+          tileBtns.forEach((b) => { b.disabled = true; });
+          lineBox.classList.remove('wrong'); lineBox.classList.add('right');
         }
       };
     }

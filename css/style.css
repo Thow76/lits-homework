@@ -231,3 +231,10 @@ html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startA
 .spell-actions .btn { flex: 1; }
 .spell-line { margin-top: 0.75rem; }
 .actions:empty { margin-top: 0; }
+
+/* Word order: one fixed line, words in a fixed pool (like Spell it) */
+.wo-line { flex-wrap: nowrap; justify-content: center; align-items: center; height: 3.25rem; min-height: 3.25rem; box-sizing: border-box; overflow: hidden; margin-top: 0.75rem; }
+.wo-text { white-space: nowrap; font-weight: 600; line-height: 1.2; }
+.wo-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 1rem 0; }
+.wo-pool .tile.word { min-height: 2.75rem; padding: 0.25rem 0.75rem; font-size: 1.1rem; }
+.tile.word.used, .tile.word.used:disabled { background: #d9dde2; border-color: #c3c8cf; color: #8a9099; }
