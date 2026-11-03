@@ -229,7 +229,6 @@
     }
 
     const head = contentBox('div', 'act-head');
-    if (def.icon && window.ICONS[def.icon]) head.appendChild(svg(def.icon));
     head.appendChild(el('span', null, q.activity.title || def.label));
     card.appendChild(head);
 

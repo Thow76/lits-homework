@@ -1,6 +1,6 @@
 # Where we are (read this first when the task runs)
 
-Last updated: 2026-11-02. Current unit: **shopping** (content/shopping/). Full detail is in content/shopping/notes.txt (see its REVISIONS list).
+Last updated: 2026-11-03. Current unit: **shopping** (content/shopping/). Full detail is in content/shopping/notes.txt (see its REVISIONS list).
 
 ## For the task
 Do NOT start from "what is the unit name?". Say: "Last time we were working on Shopping. Here is where we got to", give the short list below, and ask Andrew which item to pick up (or whether it is a new unit).
@@ -16,7 +16,7 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 - Wrong answers: no red cross box any more (answer turns red, Try again shows).
 - Right answers in tapped-choice games (Which word, Match): points show inside the green answer next to the tick.
 - Spell it: Check button becomes tick + points, Next replaces Undo, gap above the letters.
-- Phone cache is now v11 (sw.js).
+- Phone cache is now v12 (sw.js). 2026-11-03: game icons removed from all game titles (waiting for Andrew to confirm).
 
 ## For the next session: final revisions Andrew wants to look at
 - Word order and Conversation order (and other games) still use the old big green points box at the bottom; offer to change them the same way.
