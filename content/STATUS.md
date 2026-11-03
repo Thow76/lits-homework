@@ -11,6 +11,7 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 - Spell it: fixed letter grid, one-row word, Undo and Check, same box size for every word.
 - Question pictures: half size, one fixed 4:3 box; all Shopping pictures are 600x450.
 - Section 2 story audio: all 9 sentences saved (content/shopping/audio.txt).
+- 2026-11-03: Section 2 (Whole story) BUILT with Word order (4 questions) and opened today. Waiting for Andrew to test.
 
 ## Done 2026-11-02 (Andrew confirmed on his phone)
 - Wrong answers: no red cross box any more (answer turns red, Try again shows).

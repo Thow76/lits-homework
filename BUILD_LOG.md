@@ -109,3 +109,4 @@ Home totals count open sections only; section released yesterday open, released 
 - Add to Home Screen gives the book icon and opens full screen.
 - Audio autoplay on Listen-first activities (True/False, Listen and choose) — phones often block it; the Listen button always works.
 - Time a learner on each section.
+2026-11-03: Section 2 (story) built with Word order, 4 questions, release 2026-11-03, on Andrew's 'make it active now'.

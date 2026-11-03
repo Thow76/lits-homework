@@ -144,8 +144,31 @@
     {
       "id": "story",
       "title": "Whole story",
-      "release": "2099-01-08",
-      "activities": []
+      "release": "2026-11-03",
+      "activities": [
+        {
+          "type": "word-order",
+          "title": "Word order",
+          "items": [
+            {
+              "sentence": "She has a shopping list.",
+              "audio": "She-has-a-shopping-list.mp3"
+            },
+            {
+              "sentence": "A shop assistant helps Anita to find rice.",
+              "audio": "A-shop-assistant-helps-Anita-to-find-rice.mp3"
+            },
+            {
+              "sentence": "Anita has everything on her list in the basket.",
+              "audio": "Anita-has-everything-on-her-list-in-the-basket.mp3"
+            },
+            {
+              "sentence": "She pays at the self-checkout.",
+              "audio": "She-pays-at-the-self-checkout.mp3"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "understanding",
