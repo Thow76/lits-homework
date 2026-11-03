@@ -20,7 +20,7 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 - Phone cache is now v12 (sw.js). 2026-11-03: game icons removed from all game titles (waiting for Andrew to confirm).
 
 ## For the next session: final revisions Andrew wants to look at
-- Word order now matches Spell it (2026-11-03, waiting for Andrew to confirm). Conversation order (and other games) still use the old big green points box; offer to change it the same way.
+- Word order now matches Spell it (2026-11-03, Andrew confirmed happy). Conversation order (and other games) still use the old big green points box; offer to change it the same way.
 - Optional idea (needs Andrew's yes, app change): show a small version number on the page so he can tell whether his phone has the newest copy.
 - Ask Andrew for any other small problems from testing Section 1 (go game by game).
 
@@ -34,3 +34,7 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 ## Things learned (so we do not repeat them)
 - Phones keep an old saved copy of the app: after a change, close the page fully and reopen it twice. The app cache version is in sw.js (bump it when app or picture files change).
 - App files (js/, css/, sw.js, strings.json, test/) were changed with Andrew's agreement. Ask before changing any again.
+
+## NEXT SESSION (set 2026-11-03)
+- Andrew will start Section 3, Understanding the story (needs the questions, right and wrong answers, games, opening date). Section 2 is open (Word order only, 4 questions).
+- Still to ask Andrew: did the game icons disappear on his phone (cache v12+)? Change Conversation order to the new style? Confirm the 4 Which word answers.
