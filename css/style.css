@@ -179,15 +179,7 @@ button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus)
 .word { min-height: var(--tap); padding: 0.5rem 0.75rem; font-size: 1.25rem; background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); cursor: pointer; }
 .word.right { border-color: var(--good); background: var(--good-bg); }
 .word.wrong { border-color: var(--bad); background: var(--bad-bg); }
-.word.gap { border-style: dashed; min-width: 4rem; color: var(--muted); }
-.word.gap.filled { border-color: transparent; background: transparent; padding-inline: 0.25rem; min-width: 0; cursor: default; font-weight: 700; }
-.word.gap.filled.right, .fill.right { color: var(--good); }
-.word.gap.filled.wrong, .fill.wrong { color: var(--bad); }
-.fill { font-weight: 700; }
 .word.fixed { border-color: var(--good); background: var(--good-bg); }
-.words.inline { display: block; line-height: 1.9; font-size: 1.25rem; }
-.words.inline .word { display: inline; min-height: 0; padding: 0; }
-.words.inline .word.gap:not(.filled) { display: inline-block; min-width: 5rem; padding: 0 0.5rem; }
 .word.plain { border-color: transparent; background: transparent; padding-inline: 0.25rem; cursor: default; }
 
 /* Action buttons */
@@ -244,3 +236,10 @@ html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startA
 .wo-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 1rem 0; }
 .wo-pool .tile.word { min-height: 2.75rem; padding: 0.25rem 0.75rem; font-size: 1.1rem; }
 .tile.word.used, .tile.word.used:disabled { background: #d9dde2; border-color: #c3c8cf; color: #8a9099; }
+
+/* Gap sentences (Which word and Missing word): same size, between two lines, the gap is a line */
+.sline, .q.sentence.sline { display: block; font-size: 1.5rem; font-weight: 600; line-height: 1.9; padding: 0.9rem 0; margin: 0.75rem 0 1.25rem; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.sline .word { display: inline; min-height: 0; padding: 0; border: 0; background: transparent; font-size: inherit; cursor: default; }
+.gapline, .sline .word.gap { display: inline-block; min-width: 5rem; padding: 0 0.2rem; border-radius: 0; border: 0; border-bottom: 3px solid var(--ink); text-align: center; line-height: 1.2; vertical-align: baseline; color: var(--ink); background: transparent; }
+.gapline.right, .sline .word.gap.right { color: var(--good); border-bottom-color: var(--good); }
+.gapline.wrong, .sline .word.gap.wrong { color: var(--bad); border-bottom-color: var(--bad); }

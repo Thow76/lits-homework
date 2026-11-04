@@ -88,15 +88,16 @@
       // Optional "clue" picture: hidden at first; a Clue button appears after a wrong tap and reveals it.
       // Their space is reserved from the start (below the choices) so nothing on screen jumps.
       const promptText = it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null;
-      const promptEl = addPrompt(ctx, ctx.root, promptText, it.clue ? 'sentence' : '');
-      // The tapped word is written into the sentence gap (plain coloured text, no box).
-      const fillGap = (word, cls) => {
-        if (!promptEl || !promptText.includes('______')) return;
-        const [before, after] = promptText.split('______');
-        promptEl.textContent = before;
-        if (word) { const s = ctx.el('span', 'fill' + (cls ? ' ' + cls : ''), word); promptEl.appendChild(s); } else promptEl.appendChild(document.createTextNode('______'));
-        promptEl.appendChild(document.createTextNode(after));
-      };
+      const promptEl = addPrompt(ctx, ctx.root, null);
+      // The sentence sits between two lines, the gap is a line, and the tapped word is written on it.
+      let gapEl = null;
+      if (promptText) {
+        const pe = ctx.el('p', 'q sentence sline'); const [before, after] = promptText.split('______');
+        pe.appendChild(document.createTextNode(before));
+        if (after !== undefined) { gapEl = ctx.el('span', 'gapline', ''); pe.appendChild(gapEl); pe.appendChild(document.createTextNode(after)); }
+        ctx.root.appendChild(pe);
+      }
+      const fillGap = (word, cls) => { if (!gapEl) return; gapEl.textContent = word || ''; gapEl.className = 'gapline' + (word && cls ? ' ' + cls : ''); };
       addListen(ctx, ctx.root, it.audio);
       const options = (ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options)).map((o) => ({ text: o, value: o }));
       const h = choice(ctx, { options, answer: it.answer,
@@ -188,7 +189,7 @@
     render(ctx) {
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
-      const words = ctx.el('div', 'words inline');
+      const words = ctx.el('div', 'words inline sline');
       const parts = String(it.sentence).split(/_{2,}/);
       let gap = null;
       parts.forEach((p, i) => {
