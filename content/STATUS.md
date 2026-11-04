@@ -21,6 +21,8 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 
 - 2026-11-04: Section 3 (Understanding the story) BUILT and opened today: 7 games (Missing word x2, Find and fix 2 of 4, Understanding x2, Person place or thing, Match). Right answers worked out by Claude - Andrew to check. Find and fix needs an app change for two-word mistakes (ask Andrew). Section 3 pictures are soft (small in worksheet). Cache v15.
 
+- 2026-11-04: gap sentences now match in Which word and Missing word (word written into sentence, no box). Cache v17. Andrew to confirm.
+
 ## For the next session: final revisions Andrew wants to look at
 - Word order now matches Spell it (2026-11-03, Andrew confirmed happy). Conversation order (and other games) still use the old big green points box; offer to change it the same way.
 - Optional idea (needs Andrew's yes, app change): show a small version number on the page so he can tell whether his phone has the newest copy.

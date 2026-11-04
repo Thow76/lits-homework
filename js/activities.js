@@ -87,11 +87,24 @@
       addImage(ctx, ctx.root, it.image);
       // Optional "clue" picture: hidden at first; a Clue button appears after a wrong tap and reveals it.
       // Their space is reserved from the start (below the choices) so nothing on screen jumps.
-      addPrompt(ctx, ctx.root, it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null, it.clue ? 'sentence' : '');
+      const promptText = it.prompt ? it.prompt.replace(/_{2,}/g, '______') : null;
+      const promptEl = addPrompt(ctx, ctx.root, promptText, it.clue ? 'sentence' : '');
+      // The tapped word is written into the sentence gap (plain coloured text, no box).
+      const fillGap = (word, cls) => {
+        if (!promptEl || !promptText.includes('______')) return;
+        const [before, after] = promptText.split('______');
+        promptEl.textContent = before;
+        if (word) { const s = ctx.el('span', 'fill' + (cls ? ' ' + cls : ''), word); promptEl.appendChild(s); } else promptEl.appendChild(document.createTextNode('______'));
+        promptEl.appendChild(document.createTextNode(after));
+      };
       addListen(ctx, ctx.root, it.audio);
       const options = (ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options)).map((o) => ({ text: o, value: o }));
       const h = choice(ctx, { options, answer: it.answer,
-        onWrong() { if (clueBtn && clueBtn.style.visibility === 'hidden' && clueImg.style.visibility === 'hidden') clueBtn.style.visibility = 'visible'; } });
+        onRight(b, o) { fillGap(o.value, 'right'); },
+        onReveal() { fillGap(it.answer, 'right'); },
+        onWrong(b, o) { fillGap(o.value, 'wrong'); if (clueBtn && clueBtn.style.visibility === 'hidden' && clueImg.style.visibility === 'hidden') clueBtn.style.visibility = 'visible'; } });
+      const retryChoice = h.retry;
+      h.retry = () => { retryChoice(); fillGap(null); };
       let clueImg = null, clueBtn = null;
       if (it.clue) {
         clueBtn = ctx.mkBtn('clue', null, '', () => { clueImg.style.visibility = 'visible'; clueBtn.style.visibility = 'hidden'; });
@@ -175,12 +188,12 @@
     render(ctx) {
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
-      const words = ctx.el('div', 'words');
+      const words = ctx.el('div', 'words inline');
       const parts = String(it.sentence).split(/_{2,}/);
       let gap = null;
       parts.forEach((p, i) => {
-        if (p.trim()) words.appendChild(ctx.el('span', 'word plain', p.trim()));
-        if (i < parts.length - 1) { gap = ctx.el('span', 'word gap', '    '); words.appendChild(gap); }
+        if (p.trim()) { words.appendChild(ctx.el('span', 'word plain', p.trim())); words.appendChild(document.createTextNode(' ')); }
+        if (i < parts.length - 1) { gap = ctx.el('span', 'word gap', '    '); words.appendChild(gap); words.appendChild(document.createTextNode(' ')); }
       });
       ctx.root.appendChild(words);
       addListen(ctx, ctx.root, it.audio);
