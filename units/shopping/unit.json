@@ -1,192 +1,487 @@
 {
-  "id": "shopping",
-  "title": "Shopping",
-  "sections": [
+ "id": "shopping",
+ "title": "Shopping",
+ "sections": [
+  {
+   "id": "vocabulary",
+   "title": "Vocabulary and first practice",
+   "release": "2026-10-29",
+   "activities": [
     {
-      "id": "vocabulary",
-      "title": "Vocabulary and first practice",
-      "release": "2026-10-29",
-      "activities": [
-        {
-          "type": "match",
-          "title": "Match the picture to the word.",
-          "items": [
-            {
-              "image": "rice.jpg",
-              "options": [
-                "self-checkout",
-                "basket",
-                "shopping list",
-                "shop assistant",
-                "rice"
-              ],
-              "answer": "rice"
-            },
-            {
-              "image": "shopping-list.jpg",
-              "options": [
-                "self-checkout",
-                "basket",
-                "shopping list",
-                "shop assistant",
-                "rice"
-              ],
-              "answer": "shopping list"
-            },
-            {
-              "image": "shop-assistant.jpg",
-              "options": [
-                "self-checkout",
-                "basket",
-                "shopping list",
-                "shop assistant",
-                "rice"
-              ],
-              "answer": "shop assistant"
-            },
-            {
-              "image": "self-checkout.jpg",
-              "options": [
-                "self-checkout",
-                "basket",
-                "shopping list",
-                "shop assistant",
-                "rice"
-              ],
-              "answer": "self-checkout"
-            },
-            {
-              "image": "basket.jpg",
-              "options": [
-                "self-checkout",
-                "basket",
-                "shopping list",
-                "shop assistant",
-                "rice"
-              ],
-              "answer": "basket"
-            }
-          ]
-        },
-        {
-          "type": "which-word",
-          "title": "Complete the sentence with the missing word.",
-          "items": [
-            {
-              "prompt": "She has a ___.",
-              "options": [
-                "shopping list",
-                "rice",
-                "basket",
-                "self-checkout"
-              ],
-              "answer": "shopping list",
-              "clue": "she-has-a-shopping-list.jpg"
-            },
-            {
-              "prompt": "A shop assistant helps Anita to find ___.",
-              "options": [
-                "shopping list",
-                "rice",
-                "basket",
-                "self-checkout"
-              ],
-              "answer": "rice",
-              "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg"
-            },
-            {
-              "prompt": "Anita has everything on her list in the ___.",
-              "options": [
-                "shopping list",
-                "rice",
-                "basket",
-                "self-checkout"
-              ],
-              "answer": "basket",
-              "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg"
-            },
-            {
-              "prompt": "She pays at the ___.",
-              "options": [
-                "shopping list",
-                "rice",
-                "basket",
-                "self-checkout"
-              ],
-              "answer": "self-checkout",
-              "clue": "she-pays-at-the-self-checkout.jpg"
-            }
-          ]
-        },
-        {
-          "type": "spell-it",
-          "title": "Spell it",
-          "items": [
-            {
-              "word": "self-checkout",
-              "image": "self-checkout.jpg",
-              "audio": "self-checkout.mp3"
-            },
-            {
-              "word": "rice",
-              "image": "rice.jpg",
-              "audio": "rice.mp3"
-            },
-            {
-              "word": "basket",
-              "image": "basket.jpg",
-              "audio": "basket.mp3"
-            }
-          ]
-        }
-      ]
+     "type": "match",
+     "title": "Match the picture to the word.",
+     "items": [
+      {
+       "image": "rice.jpg",
+       "options": [
+        "self-checkout",
+        "basket",
+        "shopping list",
+        "shop assistant",
+        "rice"
+       ],
+       "answer": "rice"
+      },
+      {
+       "image": "shopping-list.jpg",
+       "options": [
+        "self-checkout",
+        "basket",
+        "shopping list",
+        "shop assistant",
+        "rice"
+       ],
+       "answer": "shopping list"
+      },
+      {
+       "image": "shop-assistant.jpg",
+       "options": [
+        "self-checkout",
+        "basket",
+        "shopping list",
+        "shop assistant",
+        "rice"
+       ],
+       "answer": "shop assistant"
+      },
+      {
+       "image": "self-checkout.jpg",
+       "options": [
+        "self-checkout",
+        "basket",
+        "shopping list",
+        "shop assistant",
+        "rice"
+       ],
+       "answer": "self-checkout"
+      },
+      {
+       "image": "basket.jpg",
+       "options": [
+        "self-checkout",
+        "basket",
+        "shopping list",
+        "shop assistant",
+        "rice"
+       ],
+       "answer": "basket"
+      }
+     ]
     },
     {
-      "id": "story",
-      "title": "Whole story",
-      "release": "2026-11-03",
-      "activities": [
-        {
-          "type": "word-order",
-          "title": "Word order",
-          "items": [
-            {
-              "sentence": "She has a shopping list.",
-              "audio": "She-has-a-shopping-list.mp3"
-            },
-            {
-              "sentence": "A shop assistant helps Anita to find rice.",
-              "audio": "A-shop-assistant-helps-Anita-to-find-rice.mp3"
-            },
-            {
-              "sentence": "Anita has everything on her list in the basket.",
-              "audio": "Anita-has-everything-on-her-list-in-the-basket.mp3"
-            },
-            {
-              "sentence": "She pays at the self-checkout.",
-              "audio": "She-pays-at-the-self-checkout.mp3"
-            }
-          ]
-        }
-      ]
+     "type": "which-word",
+     "title": "Complete the sentence with the missing word.",
+     "items": [
+      {
+       "prompt": "She has a ___.",
+       "options": [
+        "shopping list",
+        "rice",
+        "basket",
+        "self-checkout"
+       ],
+       "answer": "shopping list",
+       "clue": "she-has-a-shopping-list.jpg"
+      },
+      {
+       "prompt": "A shop assistant helps Anita to find ___.",
+       "options": [
+        "shopping list",
+        "rice",
+        "basket",
+        "self-checkout"
+       ],
+       "answer": "rice",
+       "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg"
+      },
+      {
+       "prompt": "Anita has everything on her list in the ___.",
+       "options": [
+        "shopping list",
+        "rice",
+        "basket",
+        "self-checkout"
+       ],
+       "answer": "basket",
+       "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg"
+      },
+      {
+       "prompt": "She pays at the ___.",
+       "options": [
+        "shopping list",
+        "rice",
+        "basket",
+        "self-checkout"
+       ],
+       "answer": "self-checkout",
+       "clue": "she-pays-at-the-self-checkout.jpg"
+      }
+     ]
     },
     {
-      "id": "understanding",
-      "title": "Understanding the story",
-      "release": "2099-01-15",
-      "activities": []
-    },
-    {
-      "id": "conversation",
-      "title": "Conversation practice",
-      "release": "2099-01-22",
-      "activities": []
-    },
-    {
-      "id": "personalisation",
-      "title": "Personalisation",
-      "release": "2099-01-29",
-      "activities": []
+     "type": "spell-it",
+     "title": "Spell it",
+     "items": [
+      {
+       "word": "self-checkout",
+       "image": "self-checkout.jpg",
+       "audio": "self-checkout.mp3"
+      },
+      {
+       "word": "rice",
+       "image": "rice.jpg",
+       "audio": "rice.mp3"
+      },
+      {
+       "word": "basket",
+       "image": "basket.jpg",
+       "audio": "basket.mp3"
+      }
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "story",
+   "title": "Whole story",
+   "release": "2026-11-03",
+   "activities": [
+    {
+     "type": "word-order",
+     "title": "Word order",
+     "items": [
+      {
+       "sentence": "She has a shopping list.",
+       "audio": "She-has-a-shopping-list.mp3"
+      },
+      {
+       "sentence": "A shop assistant helps Anita to find rice.",
+       "audio": "A-shop-assistant-helps-Anita-to-find-rice.mp3"
+      },
+      {
+       "sentence": "Anita has everything on her list in the basket.",
+       "audio": "Anita-has-everything-on-her-list-in-the-basket.mp3"
+      },
+      {
+       "sentence": "She pays at the self-checkout.",
+       "audio": "She-pays-at-the-self-checkout.mp3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "understanding",
+   "title": "Understanding the story",
+   "release": "2026-11-04",
+   "activities": [
+    {
+     "type": "missing-word",
+     "title": "Complete the sentences.",
+     "bank": [
+      "looks at",
+      "shop assistant",
+      "helps",
+      "self-checkout"
+     ],
+     "items": [
+      {
+       "sentence": "Anita ___ her shopping list.",
+       "answer": "looks at",
+       "image": "story-looks-at-list.jpg"
+      },
+      {
+       "sentence": "A ___ helps Anita.",
+       "answer": "shop assistant",
+       "image": "story-assistant-pointing.jpg"
+      },
+      {
+       "sentence": "A shop assistant ___ Anita to find rice.",
+       "answer": "helps",
+       "image": "story-assistant-helps.jpg"
+      },
+      {
+       "sentence": "Anita pays at the ___.",
+       "answer": "self-checkout",
+       "image": "story-pays.jpg"
+      }
+     ]
+    },
+    {
+     "type": "find-and-fix",
+     "title": "Find and fix the mistake.",
+     "items": [
+      {
+       "sentence": "Rice helps Anita.",
+       "wrong": "Rice",
+       "options": [
+        "A shop assistant",
+        "looks at",
+        "self-checkout"
+       ],
+       "answer": "A shop assistant",
+       "image": "story-assistant-pointing.jpg"
+      },
+      {
+       "sentence": "Anita pays at the basket.",
+       "wrong": "basket.",
+       "options": [
+        "self-checkout",
+        "shop assistant",
+        "looks at"
+       ],
+       "answer": "self-checkout",
+       "image": "story-pays.jpg"
+      }
+     ]
+    },
+    {
+     "type": "understanding",
+     "title": "Question words. Choose the answer.",
+     "items": [
+      {
+       "question": "Who helps Anita?",
+       "options": [
+        "shop assistant",
+        "supermarket",
+        "rice"
+       ],
+       "answer": "shop assistant"
+      },
+      {
+       "question": "Where does Anita pay?",
+       "options": [
+        "self-checkout",
+        "shopping list",
+        "bread"
+       ],
+       "answer": "self-checkout"
+      },
+      {
+       "question": "What does Anita buy?",
+       "options": [
+        "milk",
+        "shop assistant",
+        "school"
+       ],
+       "answer": "milk"
+      }
+     ]
+    },
+    {
+     "type": "missing-word",
+     "title": "Complete the answers.",
+     "bank": [
+      "supermarket",
+      "milk",
+      "rice",
+      "shop assistant",
+      "self-checkout"
+     ],
+     "items": [
+      {
+       "sentence": "Where is Anita? Anita is at the ___.",
+       "answer": "supermarket"
+      },
+      {
+       "sentence": "Who helps Anita? A ___ helps Anita.",
+       "answer": "shop assistant"
+      },
+      {
+       "sentence": "What does Anita buy? Anita buys ___.",
+       "answer": "milk"
+      },
+      {
+       "sentence": "Where does Anita pay? Anita pays at the ___.",
+       "answer": "self-checkout"
+      },
+      {
+       "sentence": "What does the assistant help Anita find? The assistant helps Anita find ___.",
+       "answer": "rice"
+      }
+     ]
+    },
+    {
+     "type": "sort",
+     "title": "What kind of answer are we looking for?",
+     "items": [
+      {
+       "word": "Where is Anita?",
+       "answer": "Place"
+      },
+      {
+       "word": "What does Anita have?",
+       "answer": "Thing"
+      },
+      {
+       "word": "What does Anita buy?",
+       "answer": "Thing"
+      },
+      {
+       "word": "Who helps Anita?",
+       "answer": "Person"
+      },
+      {
+       "word": "What does the assistant help her find?",
+       "answer": "Thing"
+      },
+      {
+       "word": "Where does Anita pay?",
+       "answer": "Place"
+      }
+     ]
+    },
+    {
+     "type": "match",
+     "title": "Match the picture to the sentence.",
+     "items": [
+      {
+       "image": "story-pays.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "She pays at the self-checkout."
+      },
+      {
+       "image": "story-looks-at-list.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "She looks at her list when she shops."
+      },
+      {
+       "image": "story-basket-bananas.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "She buys milk, bread, and bananas."
+      },
+      {
+       "image": "story-assistant-helps.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "A shop assistant helps Anita to find rice."
+      },
+      {
+       "image": "story-shopping-list.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "She has a shopping list."
+      },
+      {
+       "image": "story-in-aisle.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "She looks at her list when she shops.",
+        "A shop assistant helps Anita to find rice.",
+        "Anita has everything on her list in the basket.",
+        "She buys milk, bread, and bananas.",
+        "She has a shopping list."
+       ],
+       "answer": "Anita has everything on her list in the basket."
+      }
+     ]
+    },
+    {
+     "type": "understanding",
+     "title": "Read. Choose the answer.",
+     "items": [
+      {
+       "question": "Where is Anita?",
+       "options": [
+        "supermarket",
+        "home",
+        "school"
+       ],
+       "answer": "supermarket"
+      },
+      {
+       "question": "What does Anita have?",
+       "options": [
+        "a shopping list",
+        "a bus ticket",
+        "a letter"
+       ],
+       "answer": "a shopping list"
+      },
+      {
+       "question": "What does Anita buy?",
+       "options": [
+        "milk, bread and bananas",
+        "tea and coffee",
+        "apples and potatoes"
+       ],
+       "answer": "milk, bread and bananas"
+      },
+      {
+       "question": "Who helps Anita?",
+       "options": [
+        "a shop assistant",
+        "a doctor",
+        "a teacher"
+       ],
+       "answer": "a shop assistant"
+      },
+      {
+       "question": "What does the assistant help her find?",
+       "options": [
+        "rice",
+        "bread",
+        "milk"
+       ],
+       "answer": "rice"
+      },
+      {
+       "question": "Where does Anita pay?",
+       "options": [
+        "self-checkout",
+        "bus stop",
+        "café"
+       ],
+       "answer": "self-checkout"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "conversation",
+   "title": "Conversation practice",
+   "release": "2099-01-22",
+   "activities": []
+  },
+  {
+   "id": "personalisation",
+   "title": "Personalisation",
+   "release": "2099-01-29",
+   "activities": []
+  }
+ ]
 }

@@ -1,6 +1,6 @@
 # Where we are (read this first when the task runs)
 
-Last updated: 2026-11-03. Current unit: **shopping** (content/shopping/). Full detail is in content/shopping/notes.txt (see its REVISIONS list).
+Last updated: 2026-11-04. Current unit: **shopping** (content/shopping/). Full detail is in content/shopping/notes.txt (see its REVISIONS list).
 
 ## For the task
 Do NOT start from "what is the unit name?". Say: "Last time we were working on Shopping. Here is where we got to", give the short list below, and ask Andrew which item to pick up (or whether it is a new unit).
@@ -18,6 +18,8 @@ Do NOT start from "what is the unit name?". Say: "Last time we were working on S
 - Right answers in tapped-choice games (Which word, Match): points show inside the green answer next to the tick.
 - Spell it: Check button becomes tick + points, Next replaces Undo, gap above the letters.
 - Phone cache is now v12 (sw.js). 2026-11-03: game icons removed from all game titles (waiting for Andrew to confirm).
+
+- 2026-11-04: Section 3 (Understanding the story) BUILT and opened today: 7 games (Missing word x2, Find and fix 2 of 4, Understanding x2, Person place or thing, Match). Right answers worked out by Claude - Andrew to check. Find and fix needs an app change for two-word mistakes (ask Andrew). Section 3 pictures are soft (small in worksheet). Cache v15.
 
 ## For the next session: final revisions Andrew wants to look at
 - Word order now matches Spell it (2026-11-03, Andrew confirmed happy). Conversation order (and other games) still use the old big green points box; offer to change it the same way.
