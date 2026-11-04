@@ -238,7 +238,7 @@ html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startA
 .tile.word.used, .tile.word.used:disabled { background: #d9dde2; border-color: #c3c8cf; color: #8a9099; }
 
 /* Gap sentences (Which word and Missing word): same size, between two lines, the gap is a line */
-.sline, .q.sentence.sline { display: block; font-size: 1.5rem; font-weight: 600; line-height: 1.9; padding: 0.9rem 0; margin: 0.75rem 0 1.25rem; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.sline, .q.sentence.sline { display: block; font-size: 1.25rem; font-weight: 600; line-height: 1.8; padding: 0.8rem 0; margin: 0.75rem 0 1.25rem; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
 .sline .word { display: inline; min-height: 0; padding: 0; border: 0; background: transparent; font-size: inherit; cursor: default; }
 .gapline, .sline .word.gap { display: inline-block; min-width: 5rem; padding: 0 0.2rem; border-radius: 0; border: 0; border-bottom: 3px solid var(--ink); text-align: center; line-height: 1.2; vertical-align: baseline; color: var(--ink); background: transparent; }
 .gapline.right, .sline .word.gap.right { color: var(--good); border-bottom-color: var(--good); }
