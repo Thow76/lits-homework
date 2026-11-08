@@ -328,36 +328,6 @@
      ]
     },
     {
-     "type": "sort",
-     "title": "What kind of answer are we looking for?",
-     "items": [
-      {
-       "word": "Where is Anita?",
-       "answer": "Place"
-      },
-      {
-       "word": "What does Anita have?",
-       "answer": "Thing"
-      },
-      {
-       "word": "What does Anita buy?",
-       "answer": "Thing"
-      },
-      {
-       "word": "Who helps Anita?",
-       "answer": "Person"
-      },
-      {
-       "word": "What does the assistant help her find?",
-       "answer": "Thing"
-      },
-      {
-       "word": "Where does Anita pay?",
-       "answer": "Place"
-      }
-     ]
-    },
-    {
      "type": "match",
      "title": "Match the picture to the sentence.",
      "items": [
