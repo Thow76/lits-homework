@@ -70,7 +70,6 @@ async function solveCurrent(page) {
     case 'conversation-order':
       for (const l of it.lines) await page.locator('#convoPool .opt', { hasText: l.text }).click(); break;
     case 'find-and-fix':
-      await page.locator('.words .word', { hasText: new RegExp('^' + it.wrong + '$') }).click();
       await page.locator(`.opt[data-value="${it.answer}"]`).click(); break;
     case 'capital-letters': {
       const words = it.sentence.trim().split(/\s+/);

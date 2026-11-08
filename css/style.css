@@ -243,3 +243,8 @@ html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startA
 .gapline, .sline .word.gap { display: inline-block; min-width: 5rem; padding: 0 0.2rem; border-radius: 0; border: 0; border-bottom: 3px solid var(--ink); text-align: center; line-height: 1.2; vertical-align: baseline; color: var(--ink); background: transparent; }
 .gapline.right, .sline .word.gap.right { color: var(--good); border-bottom-color: var(--good); }
 .gapline.wrong, .sline .word.gap.wrong { color: var(--bad); border-bottom-color: var(--bad); }
+
+/* Find and fix: the wrong part of the sentence is red and underlined until the learner replaces it. */
+.fixspot { color: var(--bad); text-decoration: underline dashed 3px; text-underline-offset: 0.25em; }
+.fixspot.right { color: var(--good); text-decoration: underline solid 3px; }
+.fixspot.wrong { color: var(--bad); text-decoration: underline solid 3px; }

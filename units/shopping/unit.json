@@ -212,23 +212,49 @@
      "title": "Find and fix the mistake.",
      "items": [
       {
+       "sentence": "Anita pays at her shopping list.",
+       "wrong": "pays at",
+       "options": [
+        "looks at",
+        "A shop assistant",
+        "helps",
+        "self-checkout"
+       ],
+       "answer": "looks at",
+       "image": "story-looks-at-list.jpg"
+      },
+      {
        "sentence": "Rice helps Anita.",
        "wrong": "Rice",
        "options": [
-        "A shop assistant",
         "looks at",
+        "A shop assistant",
+        "helps",
         "self-checkout"
        ],
        "answer": "A shop assistant",
        "image": "story-assistant-pointing.jpg"
       },
       {
+       "sentence": "A shop assistant looks at Anita to find rice.",
+       "wrong": "looks at",
+       "options": [
+        "looks at",
+        "A shop assistant",
+        "helps",
+        "self-checkout"
+       ],
+       "answer": "helps",
+       "image": "story-assistant-helps.jpg"
+      },
+      {
        "sentence": "Anita pays at the basket.",
        "wrong": "basket.",
        "options": [
-        "self-checkout",
-        "shop assistant",
-        "looks at"
+        "looks at",
+        "A shop assistant",
+        "helps",
+        "self-checkout"
        ],
        "answer": "self-checkout",
        "image": "story-pays.jpg"

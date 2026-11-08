@@ -136,11 +136,11 @@ Each distractor must differ from `answer` by exactly one word. The three appear 
 ```
 Tapping a word drops it into the gap. Use the activity-level `bank` instead of per-item `options` to share one bank.
 
-### `find-and-fix` — spot the wrong word, then choose the right one
+### `find-and-fix` — the wrong part is shown in red; choose the right words
 ```json
-{ "sentence": "She buy bread every day.", "wrong": "buy", "options": ["buys", "buying", "bought"], "answer": "buys" }
+{ "sentence": "She buy bread every day.", "wrong": "buy", "options": ["buys", "buying", "bought"], "answer": "buys", "image": "x.jpg" }
 ```
-Step 1: the learner taps the wrong word (`wrong` must match one word of `sentence`; use `wrongIndex` (0-based) instead if the word appears twice). Step 2: the options appear and the learner taps the right one. Wrong taps at either step cost a life. Optional `prompt` / `prompt2` override the two instructions.
+The whole sentence is shown with `wrong` (one or more words, any part of `sentence`) in red and underlined, like the worksheet. The learner looks at the picture and taps the right words from `options` (include the answer; it is added if missing). The chosen words are written over the red part (green if right, red if wrong). A wrong tap costs a life. Optional `prompt` overrides the instruction.
 
 ### `word-order` — tap word tiles to build the sentence
 ```json

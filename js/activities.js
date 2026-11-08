@@ -211,51 +211,39 @@
     }
   };
 
-  /* ---- Find and fix: tap the wrong word, then choose the right one ---- */
+  /* ---- Find and fix: the sentence is shown with the wrong part in red (as on the worksheet).
+     The learner looks at the picture and taps the right words; they are written over the red part. ---- */
   A['find-and-fix'] = {
     icon: 'missingWord', label: 'Find and fix',
     render(ctx) {
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
-      const prompt = addPrompt(ctx, ctx.root, it.prompt || 'Tap the wrong word.');
-      const words = ctx.el('div', 'words');
-      const list = wordsOf(it.sentence);
-      const wrongIdx = typeof it.wrongIndex === 'number' ? it.wrongIndex : list.findIndex((w) => w.replace(/[.,!?]$/, '') === String(it.wrong).replace(/[.,!?]$/, ''));
-      const btns = [];
-      let found = false, lastWrong = null, h = null;
-      const optBox = ctx.el('div');
-      list.forEach((w, i) => {
-        const b = ctx.el('button', 'word', w); b.type = 'button';
-        b.addEventListener('click', () => {
-          if (!ctx.canAnswer() || found) return;
-          if (i === wrongIdx) {
-            found = true; b.classList.add('wrong'); b.classList.add('found');
-            if (prompt) prompt.textContent = it.prompt2 || 'Choose the right word.';
-            btns.forEach((x) => { x.disabled = true; });
-            const bank = ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options);
-            h = choice(ctx, { options: bank.map((o) => ({ text: o, value: o })), answer: it.answer,
-              onRight: (btn, o) => { b.textContent = o.value + (list[i].match(/[.,!?]$/) || [''])[0]; b.className = 'word fixed'; },
-              onReveal: () => { b.textContent = it.answer + (list[i].match(/[.,!?]$/) || [''])[0]; b.className = 'word fixed'; } });
-            optBox.appendChild(ctx.root.lastElementChild);
-          } else {
-            lastWrong = b; b.classList.add('wrong'); ctx.answer(false);
-          }
-        });
-        btns.push(b); words.appendChild(b);
-      });
-      ctx.root.appendChild(words);
+      addPrompt(ctx, ctx.root, it.prompt || 'Look at the picture. The red part is wrong. Choose the right words.');
+      const sentence = String(it.sentence).trim();
+      const wrong = String(it.wrong).trim();
+      const pos = sentence.indexOf(wrong);
+      const before = pos < 0 ? '' : sentence.slice(0, pos);
+      const after = pos < 0 ? '' : sentence.slice(pos + wrong.length);
+      // The wrong part may carry the full stop ("basket.") - keep punctuation outside the red part.
+      const tail = (wrong.match(/[.,!?]+$/) || [''])[0];
+      const core = tail ? wrong.slice(0, wrong.length - tail.length) : wrong;
+      const pe = ctx.el('p', 'q sentence sline');
+      pe.appendChild(document.createTextNode(before));
+      const spot = ctx.el('span', 'fixspot', core);
+      pe.appendChild(spot);
+      pe.appendChild(document.createTextNode(tail + after));
+      ctx.root.appendChild(pe);
+      const setSpot = (text, cls) => { spot.textContent = text; spot.className = 'fixspot' + (cls ? ' ' + cls : ''); };
       addListen(ctx, ctx.root, it.audio);
-      ctx.root.appendChild(optBox);
-      return {
-        retry() { if (h) h.retry(); if (lastWrong) { lastWrong.classList.remove('wrong'); lastWrong = null; } },
-        reveal() {
-          btns.forEach((x) => { x.disabled = true; x.classList.remove('wrong'); });
-          const b = btns[wrongIdx];
-          if (h) { h.reveal(); }
-          else if (b) { b.textContent = it.answer + (list[wrongIdx].match(/[.,!?]$/) || [''])[0]; b.className = 'word fixed'; }
-          if (prompt) prompt.textContent = it.sentence.replace(list[wrongIdx], it.answer + (list[wrongIdx].match(/[.,!?]$/) || [''])[0]);
-        }
-      };
+      const all = it.options.includes(it.answer) ? it.options.slice() : it.options.concat([it.answer]);
+      const bank = ctx.activity.shuffle === false ? all : ctx.shuffle(all);
+      const h = choice(ctx, { options: bank.map((o) => ({ text: o, value: o })), answer: it.answer,
+        onRight(b, o) { setSpot(o.value, 'right'); },
+        onWrong(b, o) { setSpot(o.value, 'wrong'); },
+        onReveal() { setSpot(it.answer, 'right'); } });
+      const retryChoice = h.retry;
+      h.retry = () => { retryChoice(); setSpot(core, ''); };
+      return h;
     }
   };
 
