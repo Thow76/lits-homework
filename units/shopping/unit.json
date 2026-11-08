@@ -176,6 +176,39 @@
    "release": "2026-11-04",
    "activities": [
     {
+     "type": "match",
+     "title": "Match the picture to the sentence.",
+     "items": [
+      {
+       "image": "story-pays.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "A shop assistant helps Anita to find rice.",
+        "She has a shopping list."
+       ],
+       "answer": "She pays at the self-checkout."
+      },
+      {
+       "image": "story-assistant-helps.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "A shop assistant helps Anita to find rice.",
+        "She has a shopping list."
+       ],
+       "answer": "A shop assistant helps Anita to find rice."
+      },
+      {
+       "image": "story-shopping-list.jpg",
+       "options": [
+        "She pays at the self-checkout.",
+        "A shop assistant helps Anita to find rice.",
+        "She has a shopping list."
+       ],
+       "answer": "She has a shopping list."
+      }
+     ]
+    },
+    {
      "type": "missing-word",
      "title": "Complete the sentences.",
      "bank": [
@@ -324,84 +357,6 @@
       {
        "sentence": "What does the assistant help Anita find? The assistant helps Anita find ___.",
        "answer": "rice"
-      }
-     ]
-    },
-    {
-     "type": "match",
-     "title": "Match the picture to the sentence.",
-     "items": [
-      {
-       "image": "story-pays.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "She pays at the self-checkout."
-      },
-      {
-       "image": "story-looks-at-list.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "She looks at her list when she shops."
-      },
-      {
-       "image": "story-basket-bananas.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "She buys milk, bread, and bananas."
-      },
-      {
-       "image": "story-assistant-helps.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "A shop assistant helps Anita to find rice."
-      },
-      {
-       "image": "story-shopping-list.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "She has a shopping list."
-      },
-      {
-       "image": "story-in-aisle.jpg",
-       "options": [
-        "She pays at the self-checkout.",
-        "She looks at her list when she shops.",
-        "A shop assistant helps Anita to find rice.",
-        "Anita has everything on her list in the basket.",
-        "She buys milk, bread, and bananas.",
-        "She has a shopping list."
-       ],
-       "answer": "Anita has everything on her list in the basket."
       }
      ]
     },
