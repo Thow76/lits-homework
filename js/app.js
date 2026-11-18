@@ -188,6 +188,35 @@
   /* ---------- section runner ---------- */
   let run = null; // { section, qs, idx, scores[], wrong, qstate }
 
+  /* "Are you sure?" box for Start again. Yes clears the saved answers (best score is kept) and
+     reopens the section at question 1. Shown inside `host`; only one box at a time. */
+  function askStartAgain(section, host) {
+    if (host.querySelector('.confirm')) return;
+    const c = el('div', 'confirm');
+    const p = el('p', null, t('areYouSure')); const a2 = t2('areYouSure');
+    if (a2) { p.appendChild(el('br')); const s = el('span', null, a2); s.lang = state.lang2; p.appendChild(s); }
+    c.appendChild(p);
+    const row = el('div', 'row2');
+    row.appendChild(mkBtn('yes', null, 'bad', () => {
+      const dd = store.get(section.id); dd.cur = null; store.set(section.id, dd); // clears answers, keeps best
+      openSection(section);
+    }));
+    row.appendChild(mkBtn('no', null, 'secondary', () => c.remove()));
+    c.appendChild(row);
+    host.appendChild(c);
+    c.scrollIntoView({ block: 'nearest' });
+  }
+
+  /* Top-bar Start again button (question screens): restart the section without finishing it. */
+  function restartButton(section, hostFn) {
+    const b = el('button', 'iconbtn'); b.type = 'button'; b.id = 'restartBtn';
+    b.appendChild(svg('startAgain'));
+    b.appendChild(el('span', null, t('startAgain')));
+    b.setAttribute('aria-label', t('startAgain'));
+    b.addEventListener('click', () => askStartAgain(section, hostFn()));
+    return b;
+  }
+
   function openSection(section) {
     const qs = questionsOf(section);
     const saved = store.get(section.id);
@@ -213,7 +242,7 @@
 
     const lives = el('div', 'lives'); lives.id = 'lives';
     for (let i = 0; i < MAX_WRONG; i++) lives.appendChild(svg('cross'));
-    setTop(run.section.title, true, null);
+    setTop(run.section.title, true, restartButton(run.section, () => $app.firstElementChild || $app));
     $app.innerHTML = '';
 
     const card = el('div', 'card');
@@ -350,22 +379,7 @@
     const nextSec = state.unit.sections.slice(idx + 1).find(isOpen);
     if (nextSec) actions.appendChild(mkBtn('next', 'next', '', () => openSection(nextSec)));
     else actions.appendChild(mkBtn('home', 'home', '', () => showHome()));
-    const again = mkBtn('startAgain', 'startAgain', 'secondary small', () => {
-      if (card.querySelector('.confirm')) return;
-      const c = el('div', 'confirm');
-      const p = el('p', null, t('areYouSure')); const a2 = t2('areYouSure');
-      if (a2) { p.appendChild(el('br')); const s = el('span', null, a2); s.lang = state.lang2; p.appendChild(s); }
-      c.appendChild(p);
-      const row = el('div', 'row2');
-      row.appendChild(mkBtn('yes', null, 'bad', () => {
-        const dd = store.get(section.id); dd.cur = null; store.set(section.id, dd); // clears answers, keeps best
-        openSection(section);
-      }));
-      row.appendChild(mkBtn('no', null, 'secondary', () => c.remove()));
-      c.appendChild(row);
-      card.appendChild(c);
-      c.scrollIntoView({ block: 'nearest' });
-    });
+    const again = mkBtn('startAgain', 'startAgain', 'secondary small', () => askStartAgain(section, card));
     actions.appendChild(again);
     card.appendChild(actions);
     $app.appendChild(card);

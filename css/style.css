@@ -55,6 +55,8 @@ button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus)
 }
 .iconbtn svg { width: 1.5rem; height: 1.5rem; }
 .topbar .iconbtn { color: var(--brand-ink); }
+.topbar .iconbtn span { font-size: 0.7rem; }
+.topbar .confirm { margin: 0; }
 
 /* Layout */
 .app { max-width: 40rem; margin: 0 auto; padding: 1rem; }
