@@ -326,7 +326,6 @@
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
       addPrompt(ctx, ctx.root, it.prompt);
-      addListen(ctx, ctx.root, it.audio);
       const word = String(it.word);
       const letters = word.split('').map((c, i) => ({ id: i, text: c }));
       const extra = String(it.extra || '').split('').filter(Boolean).map((c, i) => ({ id: 100 + i, text: c }));
@@ -356,6 +355,7 @@
         refresh(); ctx.answer(ok);
       });
       confirm.id = 'confirmBtn';
+      addListen(ctx, ctx.root, it.audio); // Listen sits under the letter tiles, above Undo / Check (Andrew, 2026-11-18)
       const actions = ctx.el('div', 'spell-actions'); actions.appendChild(undo); actions.appendChild(confirm);
       ctx.root.appendChild(actions);
       function refresh() {
