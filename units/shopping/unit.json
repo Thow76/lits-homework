@@ -178,6 +178,7 @@
     {
      "type": "match",
      "title": "Match the picture to the sentence.",
+     "imageSize": "large",
      "items": [
       {
        "image": "story-pays.jpg",

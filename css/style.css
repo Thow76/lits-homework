@@ -101,6 +101,7 @@ button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus)
 .q { font-size: 1.25rem; line-height: 1.4; margin: 0 0 1rem; }
 .q.sentence { font-size: 1.6rem; font-weight: 600; line-height: 1.35; margin: 0.5rem 0 1.25rem; }
 .q img, .qimg { display: block; width: 50%; aspect-ratio: 4 / 3; object-fit: contain; margin: 0 auto 1rem; border-radius: var(--radius); }
+.qimg.large { width: 80%; }
 .clue-area { display: grid; justify-items: center; align-items: center; }
 .clue-area > * { grid-area: 1 / 1; }
 .clue-area .qimg { margin: 0; }

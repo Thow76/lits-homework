@@ -81,6 +81,7 @@ An activity is a group of questions of one type:
 | `shuffle` | no       | set `false` to show options in the order written (default: options are shuffled). |
 | `bank`    | no       | `missing-word` only: a word bank shared by all items that do not give their own `options`. |
 | `categories` | no    | `sort` only: the category names, default `["Person", "Place", "Thing"]`. |
+| `imageSize` | no     | `"large"` shows this activity's question pictures at 80% of the width instead of 50% (for pictures whose detail matters, e.g. a scene matched to a sentence). |
 
 Any question may carry `"audio": "file.mp3"` (adds a Listen button) and most may carry
 `"image": "file.jpg"` (shown above the question). Options are shown one per row, full width.

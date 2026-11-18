@@ -17,7 +17,7 @@
   }
   function addImage(ctx, parent, name) {
     if (!name) return;
-    const img = ctx.el('img', 'qimg'); img.src = ctx.asset(name); img.alt = ''; parent.appendChild(img);
+    const img = ctx.el('img', 'qimg' + (ctx.activity.imageSize === 'large' ? ' large' : '')); img.src = ctx.asset(name); img.alt = ''; parent.appendChild(img);
   }
   function addPrompt(ctx, parent, text, cls) {
     if (!text) return null;
