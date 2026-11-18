@@ -258,7 +258,6 @@
       const it = ctx.item;
       addImage(ctx, ctx.root, it.image);
       addPrompt(ctx, ctx.root, it.prompt);
-      addListen(ctx, ctx.root, it.audio);
       const target = wordsOf(it.sentence);
       const n = target.length;
       const words = target.map((w, i) => ({ id: i, text: w }));
@@ -289,6 +288,7 @@
         refresh(); ctx.answer(ok);
       });
       confirm.id = 'confirmBtn';
+      addListen(ctx, ctx.root, it.audio); // Listen sits under the word tiles, above Undo / Check (Andrew, 2026-11-18)
       const actions = ctx.el('div', 'spell-actions'); actions.appendChild(undo); actions.appendChild(confirm);
       ctx.root.appendChild(actions);
       // One font size for the whole sentence, so the line never changes height or size while words are added.
