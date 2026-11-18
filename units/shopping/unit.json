@@ -82,7 +82,7 @@
        ],
        "answer": "shopping list",
        "clue": "she-has-a-shopping-list.jpg",
-       "audio": "shopping-list.mp3"
+       "audio": "She-has-a-shopping-list.mp3"
       },
       {
        "prompt": "A shop assistant helps Anita to find ___.",
@@ -94,7 +94,7 @@
        ],
        "answer": "rice",
        "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg",
-       "audio": "rice.mp3"
+       "audio": "A-shop-assistant-helps-Anita-to-find-rice.mp3"
       },
       {
        "prompt": "Anita has everything on her list in the ___.",
@@ -106,7 +106,7 @@
        ],
        "answer": "basket",
        "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg",
-       "audio": "basket.mp3"
+       "audio": "Anita-has-everything-on-her-list-in-the-basket.mp3"
       },
       {
        "prompt": "She pays at the ___.",
@@ -118,7 +118,7 @@
        ],
        "answer": "self-checkout",
        "clue": "she-pays-at-the-self-checkout.jpg",
-       "audio": "self-checkout.mp3"
+       "audio": "She-pays-at-the-self-checkout.mp3"
       }
      ]
     },

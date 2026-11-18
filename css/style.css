@@ -202,7 +202,7 @@ button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus)
 .btn.bad { background: var(--bad); border-color: var(--bad); }
 .btn.ghost { background: transparent; border-color: var(--line); color: var(--muted); }
 .btn:disabled { opacity: 0.5; cursor: default; }
-.btn.listen { background: var(--card); color: var(--brand); }
+.btn.listen { background: var(--card); color: var(--brand); margin-bottom: 1rem; }
 .btn.listen.playing { background: var(--tile); }
 .btn.inline { width: auto; min-width: 5rem; }
 
