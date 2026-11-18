@@ -278,6 +278,10 @@
     let handlers = {};
     try { handlers = def.render(ctx) || {}; }
     catch (err) { console.error(err); content.appendChild(el('p', 'muted', 'This question could not be shown.')); }
+    // A game may mark where the Next / Try again buttons go (e.g. Which word puts them under Listen,
+    // above the reserved clue space) with an empty .actions-here element; otherwise they follow the content.
+    const slot = content.querySelector('.actions-here');
+    if (slot) slot.replaceWith(actions);
     run.handlers = handlers;
     run.actions = actions;
     run.lives = lives;
