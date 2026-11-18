@@ -272,8 +272,10 @@
       const poolBox = ctx.el('div', 'wo-pool'); poolBox.id = 'wordPool';
       // Small Undo at the top right, just above the sentence line, so a wrong tap can be undone at once (Andrew, 2026-11-18).
       const top = ctx.el('div', 'wo-top');
-      const undoTop = ctx.mkBtn('undo', null, 'secondary small', () => { if (locked || !ctx.canAnswer() || !line.length) return; line.pop(); refresh(); });
-      undoTop.id = 'undoTopBtn'; top.appendChild(undoTop);
+      const undoTop = ctx.el('button', 'iconbtn wo-undo'); undoTop.type = 'button'; undoTop.id = 'undoTopBtn';
+      undoTop.appendChild(ctx.svg('undo')); undoTop.setAttribute('aria-label', ctx.t('undo')); undoTop.title = ctx.t('undo');
+      undoTop.addEventListener('click', () => { if (locked || !ctx.canAnswer() || !line.length) return; line.pop(); refresh(); });
+      top.appendChild(undoTop);
       ctx.root.appendChild(top); ctx.root.appendChild(lineBox); ctx.root.appendChild(poolBox);
       const tileBtns = tiles.map((tile) => {
         const t = ctx.el('button', 'tile word', tile.text); t.type = 'button';

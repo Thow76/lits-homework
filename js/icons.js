@@ -11,6 +11,7 @@
     tryAgain: svg('<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/>'),
     showAnswer: svg('<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
     startAgain: svg('<path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/>'),
+    undo: svg('<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/>'),
     confirm: svg('<path d="M7 11v9H3v-9h4z"/><path d="M7 11l4-7c1.5 0 2.5 1 2.5 2.5V10H20a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 18.8 20H7"/>'),
     home: svg('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>'),
     // Feedback
