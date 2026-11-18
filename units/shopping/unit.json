@@ -4,7 +4,7 @@
  "sections": [
   {
    "id": "vocabulary",
-   "title": "Vocabulary and first practice",
+   "title": "Vocabulary",
    "release": "2026-10-29",
    "activities": [
     {
@@ -81,7 +81,8 @@
         "self-checkout"
        ],
        "answer": "shopping list",
-       "clue": "she-has-a-shopping-list.jpg"
+       "clue": "she-has-a-shopping-list.jpg",
+       "audio": "shopping-list.mp3"
       },
       {
        "prompt": "A shop assistant helps Anita to find ___.",
@@ -92,7 +93,8 @@
         "self-checkout"
        ],
        "answer": "rice",
-       "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg"
+       "clue": "a-shop-assistant-helps-Anita-to-find-rice.jpg",
+       "audio": "rice.mp3"
       },
       {
        "prompt": "Anita has everything on her list in the ___.",
@@ -103,7 +105,8 @@
         "self-checkout"
        ],
        "answer": "basket",
-       "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg"
+       "clue": "Anita-has-everything-on-her-list-in-the-basket.jpg",
+       "audio": "basket.mp3"
       },
       {
        "prompt": "She pays at the ___.",
@@ -114,7 +117,8 @@
         "self-checkout"
        ],
        "answer": "self-checkout",
-       "clue": "she-pays-at-the-self-checkout.jpg"
+       "clue": "she-pays-at-the-self-checkout.jpg",
+       "audio": "self-checkout.mp3"
       }
      ]
     },
