@@ -98,7 +98,6 @@
         ctx.root.appendChild(pe);
       }
       const fillGap = (word, cls) => { if (!gapEl) return; gapEl.textContent = word || ''; gapEl.className = 'gapline' + (word && cls ? ' ' + cls : ''); };
-      addListen(ctx, ctx.root, it.audio);
       const options = (ctx.activity.shuffle === false ? it.options : ctx.shuffle(it.options)).map((o) => ({ text: o, value: o }));
       const h = choice(ctx, { options, answer: it.answer,
         onRight(b, o) { fillGap(o.value, 'right'); },
@@ -106,6 +105,7 @@
         onWrong(b, o) { fillGap(o.value, 'wrong'); if (clueBtn && clueBtn.style.visibility === 'hidden' && clueImg.style.visibility === 'hidden') clueBtn.style.visibility = 'visible'; } });
       const retryChoice = h.retry;
       h.retry = () => { retryChoice(); fillGap(null); };
+      addListen(ctx, ctx.root, it.audio); // Listen sits below the choices (Andrew, 2026-11-18)
       let clueImg = null, clueBtn = null;
       if (it.clue) {
         clueBtn = ctx.mkBtn('clue', null, '', () => { clueImg.style.visibility = 'visible'; clueBtn.style.visibility = 'hidden'; });
