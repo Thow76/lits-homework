@@ -235,6 +235,8 @@ html[dir="rtl"] .btn[data-key="next"] svg, html[dir="rtl"] .btn[data-key="startA
 .qcontent .actions { margin-top: 0; margin-bottom: 1rem; }
 
 /* Word order: one fixed line, words in a fixed pool (like Spell it) */
+.wo-top { display: flex; justify-content: flex-end; margin-top: 0.25rem; }
+.wo-top .btn { width: auto; min-width: 0; flex: none; padding: 0.25rem 1.25rem; }
 .wo-line { flex-wrap: nowrap; justify-content: center; align-items: center; height: 3.25rem; min-height: 3.25rem; box-sizing: border-box; overflow: hidden; margin-top: 0.75rem; }
 .wo-text { white-space: nowrap; font-weight: 600; line-height: 1.2; }
 .wo-pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 1rem 0; }
